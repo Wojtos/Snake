@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 19:38:52.909747 UTC
+2018-01-20 20:54:10.472453 UTC
 
 interface main:GameState 8022
-  interface hash: f4d911f82333cedf98a84777b0e2607b
-  ABI hash: 3f1fbe67f87d5f6386c754d3936b31d9
-  export-list hash: 46e397366e2691425921ce5dcc3899c0
+  interface hash: 1b893a2a6ebfcb35bd42feb5bb05ac0c
+  ABI hash: f55de4d8fd383a980a004bc8ebc8a8c7
+  export-list hash: b040005083cbdb0c0a388c6a155d3345
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -14,6 +14,7 @@ interface main:GameState 8022
 exports:
   GameState.initialGameState
   GameState.orientationToInt
+  GameState.orientationToPosition
   GameState.GameState{GameState.Game applePos orientation snakeBody tilesToBeAdded}
   GameState.Orientation{GameState.Down GameState.Left GameState.Right GameState.Up}
   GameState.Position
@@ -231,7 +232,7 @@ ad413e1f7bee8309ee08c85507c192f3
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 -> ds2 }) -}
-a0f8c1421f5a7b6a20767644e00609d2
+2ef5b4a2fc24d339c35d065135265708
   initialGameState :: GameState.GameState
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GameState.Game
@@ -242,47 +243,7 @@ a0f8c1421f5a7b6a20767644e00609d2
 5f686c7784a6f853d12f501d0b886443
   initialGameState1 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
-2b590050345e5dddb3e8760f2600a7e4
-  initialGameState10 :: [GameState.Position]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GameState.Position
-                   GameState.initialGameState11
-                   (GHC.Types.[] @ GameState.Position)) -}
-88b509c0dea9f684fa8c633e2a619d74
-  initialGameState11 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState12,
-                  GameState.initialGameState1)) -}
-ba79629670875c0a2c9f7accd10f25e4
-  initialGameState12 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
-e311f2daed021b831c0a4e024577608b
-  initialGameState13 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState4,
-                  GameState.initialGameState1)) -}
-d10c31aa187aff0a4b8d5f036a2466bf
-  initialGameState14 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState3,
-                  GameState.initialGameState1)) -}
-da65d0a4ce5363c7ed502f9bb9c32757
-  initialGameState15 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState3,
-                  GameState.initialGameState12)) -}
-96ba8d8049bf727c3a8275ff6b70fcab
-  initialGameState16 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState3,
-                  GameState.initialGameState4)) -}
-b40ec19daf73800ea71afc297669ad88
-  initialGameState17 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((GameState.initialGameState3,
-                  GameState.initialGameState3)) -}
-951b289e157245d1aefa6fc847806e63
+988f2e4c2f8b8f913647664ef998d88c
   initialGameState2 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((GameState.initialGameState4,
@@ -290,44 +251,21 @@ b40ec19daf73800ea71afc297669ad88
 8fda3c797e1a015f2d559267a8ff60e9
   initialGameState3 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
-54d40277bcb65a565d5832d1a3cd3147
+0cba67e55365e7995b0875e91e79d284
   initialGameState4 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
-e0fb2c0b878bb6c81112f6ee8d1dc87e
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# -1#) -}
+2aeeeb58a733dd536e2a7447a8b50846
   initialGameState5 :: [GameState.Position]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ GameState.Position
-                   GameState.initialGameState17
-                   GameState.initialGameState6) -}
-27812fb6eaa2b00f961f07bf1a8a5db7
-  initialGameState6 :: [GameState.Position]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GameState.Position
-                   GameState.initialGameState16
-                   GameState.initialGameState7) -}
-342a2f4c868c1c8221a9ca4b5c47e35a
-  initialGameState7 :: [GameState.Position]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GameState.Position
-                   GameState.initialGameState15
-                   GameState.initialGameState8) -}
-0b2575f0400235fee77112e76cc08258
-  initialGameState8 :: [GameState.Position]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GameState.Position
-                   GameState.initialGameState14
-                   GameState.initialGameState9) -}
-ed8a3ff423b7d42a84f77f7d436fa870
-  initialGameState9 :: [GameState.Position]
-  {- HasNoCafRefs, Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GameState.Position
-                   GameState.initialGameState13
-                   GameState.initialGameState10) -}
+                   GameState.initialGameState6
+                   (GHC.Types.[] @ GameState.Position)) -}
+11e1962cd8a8dfe5bb81a9fba850902c
+  initialGameState6 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameState.initialGameState3,
+                  GameState.initialGameState3)) -}
 4ac8d945e93e405b94c13340932266e0
   orientation :: GameState.GameState -> GameState.Orientation
   RecSel Left GameState.GameState
@@ -335,16 +273,48 @@ ed8a3ff423b7d42a84f77f7d436fa870
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 -> ds3 }) -}
-7b43a961f8af0ae25a20954efb0d8d39
+7d898603fa31619c3a517a084ed3797d
   orientationToInt :: GameState.Orientation -> GHC.Types.Int
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
      Unfolding: InlineRule (1, True, False)
                 (\ (x :: GameState.Orientation) ->
                  case x of wild {
                    GameState.Up -> GameState.initialGameState3
-                   GameState.Right -> GameState.initialGameState4
-                   GameState.Down -> GameState.initialGameState12
+                   GameState.Right -> GameState.orientationToInt2
+                   GameState.Down -> GameState.orientationToInt1
                    GameState.Left -> GameState.initialGameState1 }) -}
+7cbda304f544fd7e6038d90208255d31
+  orientationToInt1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+81fb53f12831e72bacbc6e50973ddfeb
+  orientationToInt2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+22fcac6ae4401c140a7c8bfb9c6ffa1b
+  orientationToPosition ::
+    GameState.Orientation -> GameState.Position
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GameState.Orientation) ->
+                 case x of wild {
+                   GameState.Up -> GameState.orientationToPosition3
+                   GameState.Right -> GameState.orientationToPosition2
+                   GameState.Down -> GameState.orientationToPosition1
+                   GameState.Left -> GameState.initialGameState2 }) -}
+89879458f716ba5f15d942d584327d4e
+  orientationToPosition1 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameState.initialGameState3,
+                  GameState.initialGameState4)) -}
+9cd3f4bb22a1d12dbd6eb527227cec3a
+  orientationToPosition2 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameState.orientationToInt2,
+                  GameState.initialGameState3)) -}
+1efcddc8e13e98b9290d2b337b01d7b8
+  orientationToPosition3 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameState.initialGameState3,
+                  GameState.orientationToInt2)) -}
 4ac8d945e93e405b94c13340932266e0
   snakeBody :: GameState.GameState -> [GameState.Position]
   RecSel Left GameState.GameState

@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/bin"
-libdir     = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/lib/x86_64-linux-ghc-8.2.2/snake-0.1.0.0-Ghgb8nOgiPEBiZeivukoi7-snake"
+libdir     = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/lib/x86_64-linux-ghc-8.2.2/snake-0.1.0.0-L455Y1vz4Yu4cjOcj2u2GZ-snake"
 dynlibdir  = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/lib/x86_64-linux-ghc-8.2.2"
 datadir    = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/share/x86_64-linux-ghc-8.2.2/snake-0.1.0.0"
 libexecdir = "/home/wojtek/AGH/Haskell/snake/.stack-work/install/x86_64-linux/lts-10.3/8.2.2/libexec/x86_64-linux-ghc-8.2.2/snake-0.1.0.0"

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 18:47:21.699929 UTC
+2018-01-20 21:03:09.729394 UTC
 
 interface main:GameSettings 8022
-  interface hash: 08a2bc434056dad1d1685ca35df16330
-  ABI hash: 1b0570c44b4f750e285f2e8693289042
-  export-list hash: 9ae63ff9e2178c0419c37c6f14559068
+  interface hash: 2d920fb20b053496c79e6f3f591dcfc9
+  ABI hash: 158a7e7d5030922450fd101754d5ea0f
+  export-list hash: fef611c6f275e46a65f7ac1bc6338fca
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -14,6 +14,7 @@ interface main:GameSettings 8022
 exports:
   GameSettings.appleColor
   GameSettings.bgColor
+  GameSettings.sizeOfBoard
   GameSettings.sizeOfScreen
   GameSettings.sizeOfTile
   GameSettings.snakeColor
@@ -81,6 +82,9 @@ f4bf5b25af02fd475f8200b9a8d147db
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Graphics.Gloss.Data.Color.white -}
+821fd2952cb158c53fd36647f3719996
+  sizeOfBoard :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 17#) -}
 391667a5b5b03c3338aeed148296ef24
   sizeOfScreen :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 272#) -}

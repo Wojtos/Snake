@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 19:38:53.043388 UTC
+2018-01-20 21:05:27.79158 UTC
 
 interface main:Main 8022
-  interface hash: 489468859380f9cdd854abaa1f540b9b
-  ABI hash: 5d4f57f9cd5764aee57270fccfae3301
+  interface hash: e1c66a14b0dca3a19166fcedcf04f818
+  ABI hash: b853b6bd6be83e573cadfb6628dc25c8
   export-list hash: 0c6dd57704519eb66bc2e35415b75158
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8ba87647430bd4dec4a8dfcbbc06ed1d
@@ -48,15 +48,17 @@ import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
 import  -/  gloss-1.11.1.1:Graphics.Gloss 42927f6b8c3c9969ac9a5d586179f98b
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Color ad515478ea5e275b408a466a82dd64bd
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Display 0584c981ac46d2974e92544e0b9edf2c
-import  -/  gloss-1.11.1.1:Graphics.Gloss.Interface.Pure.Display b33ca0e9eb771b2fb71e0ad778d06e58
-import  -/  GameState 3f1fbe67f87d5f6386c754d3936b31d9
-  exports: 46e397366e2691425921ce5dcc3899c0
-  initialGameState a0f8c1421f5a7b6a20767644e00609d2
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.ViewPort e3a26d6e96e6a33b79cbc9b4d07171f7
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Interface.Pure.Simulate c9cea3322237f9f49dbda83dcb10d2e7
+import  -/  GameState f55de4d8fd383a980a004bc8ebc8a8c7
+  exports: b040005083cbdb0c0a388c6a155d3345
+  initialGameState 2ef5b4a2fc24d339c35d065135265708
 import  -/  Renderer 75d402eb2bdc75998b543608f65b964d
   exports: d0a8aaa82260f1a75c30619711d10246
   render 1114ddbfc74bafad818776389d142ad9
-import  -/  UpdateGame e0c53a40613ca960a4b35e4bc663726e
-  exports: 86fefa944ec996fe91f42559937cd9a8
+import  -/  UpdateGame 075c130236d6c45636638aaf6b7bb22d
+  exports: 5a88084840f97dd8865523048154b407
+  update 7ff7c1fc069a6da298792bd0560d8a3c
 9d72b2fddb818bcd8919052935e0f1f3
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -75,80 +77,137 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-72561852889c36e7f2b5654869283199
+dbd4548e9b36de89da495e13677712b6
+  $wplaySnake ::
+    GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Graphics.Gloss.Internals.Interface.Simulate.simulateWithBackendIO1
+                        @ GameState.GameState
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                        (Graphics.Gloss.Data.Display.InWindow
+                           Main.main10
+                           (w, w)
+                           Main.main6)
+                        Graphics.Gloss.Data.Color.white
+                        Main.main4
+                        GameState.initialGameState
+                        Main.main3
+                          `cast`
+                        (<GameState.GameState>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Main.main2
+                          `cast`
+                        (<Graphics.Gloss.Data.ViewPort.ViewPort>_R
+                         ->_R <GHC.Types.Float>_R
+                         ->_R <GameState.GameState>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GameState.GameState>_R))
+                        w1 of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+571cdd45854636fed053962798a7007e
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-e946cfe048390a46683f791d00b86669
+a362d8c1ebc8c94a68329fe87a089f04
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 Graphics.Gloss.Internals.Interface.Display.displayWithBackend1
-                   @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
-                   Main.main3
-                   Graphics.Gloss.Data.Color.white
-                   Main.main2
-                     `cast`
-                   (Sym (GHC.Types.N:IO[0]
-                             <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
-                   Graphics.Gloss.Interface.Pure.Display.display2
-                     `cast`
-                   (<Graphics.Gloss.Data.Controller.Controller>_R
-                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
-                   eta) -}
-4f50b211a0ba61a68dc65a88ad10f7a3
-  main10 ::
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Graphics.Gloss.Internals.Interface.Simulate.simulateWithBackendIO1
+                        @ GameState.GameState
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                        Main.main5
+                        Graphics.Gloss.Data.Color.white
+                        Main.main4
+                        GameState.initialGameState
+                        Main.main3
+                          `cast`
+                        (<GameState.GameState>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Main.main2
+                          `cast`
+                        (<Graphics.Gloss.Data.ViewPort.ViewPort>_R
+                         ->_R <GHC.Types.Float>_R
+                         ->_R <GameState.GameState>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <GameState.GameState>_R))
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+dd81c58984a2edc8204def1a389d1fac
+  main10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Main.main11) -}
+86179a30ba9d225023745b35cef768b7
+  main11 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Snake"#) -}
+894b6479ccfab6e4f1560d344b6d0d93
+  main12 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-d1c675aa3263a8109a556661745fceaf
+f7a6cb1f851f8319311eddd666964d24
   main2 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
+    Graphics.Gloss.Data.ViewPort.ViewPort
+    -> GHC.Types.Float
+    -> GameState.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GameState.GameState #)
+  {- Arity: 4,
+     Strictness: <L,A><L,A><L,U(U,U(U(U),U(U)),U,U(U))><S,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ (view :: Graphics.Gloss.Data.ViewPort.ViewPort)
+                   (time :: GHC.Types.Float)[OneShot]
+                   (model1 :: GameState.GameState)[OneShot]
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1, UpdateGame.update view time model1 #)) -}
+652256bee95997335419b5370e3d872c
+  main3 ::
+    GameState.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           Graphics.Gloss.Internals.Data.Picture.Picture #)
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: InlineRule (1, True, False)
-                (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 (# s,
-                    case Renderer.$wrender
-                           GameState.initialGameState of ww { Unit# ww1 ->
-                    Graphics.Gloss.Internals.Data.Picture.Pictures ww1 } #)) -}
-37d549caafb1287880a167afea65797c
-  main3 :: Graphics.Gloss.Data.Display.Display
+  {- Arity: 2, Strictness: <L,1*U(1*U,1*U(1*U(U),1*U(U)),A,A)><S,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (x :: GameState.GameState)
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1, Renderer.render x #)) -}
+a18f62f37942016174309aa37b0afd33
+  main4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+57e52e14b57cce106f8298e0a6f7dec2
+  main5 :: Graphics.Gloss.Data.Display.Display
   {- Strictness: m1,
      Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Main.main10
                    Main.main8
-                   Main.main6
-                   Main.main4) -}
-3f45cb14e9054cf6115cd99186b76af7
-  main4 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: ((Main.main5, Main.main5)) -}
-b15c5f5d5229235c436174aa39549c42
-  main5 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
-72d23bfeafa8985d30072d1f0d6108c2
+                   Main.main6) -}
+87a7631b979996ebda0ea3ea2f6eb083
   main6 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((Main.main7, Main.main7)) -}
-a36f179cfa3435db8ea26d07fcb2d2e0
+4fc9d0ad507f4f38dfc486f788f4a1b1
   main7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+0b318dc068dde3c951b3c9f90b24445c
+  main8 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.main9, Main.main9)) -}
+3ab90bae283988e9553ce05aeaec86d3
+  main9 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 272#) -}
-38bd1ead54e7cd1f922b1bd3a198c63a
-  main8 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# Main.main9) -}
-703ccf169c3c338f34dc4bcb0f7e65b3
-  main9 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("Snake"#) -}
-9639308dd382405737bb0c4c8f604b5e
+dd02282c60087fbbda48a64ec6e62787
   playSnake :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,U><L,A><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -157,35 +216,18 @@ a36f179cfa3435db8ea26d07fcb2d2e0
                 (<GHC.Types.Int>_R
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-fb5bfdb15bc70f18dae996577e3e5720
+5bd06d9a4f24b405693959d2922fba2c
   playSnake1 ::
     GHC.Types.Int
     -> GHC.Types.Int
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 3, Strictness: <L,U><L,A><S,U>,
-     Unfolding: InlineRule (3, True, False)
-                (\ (sizeOfScreen :: GHC.Types.Int)
-                   (sizeOfTile :: GHC.Types.Int)
-                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 Graphics.Gloss.Internals.Interface.Display.displayWithBackend1
-                   @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
-                   Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
-                   (Graphics.Gloss.Data.Display.InWindow
-                      Main.main8
-                      (sizeOfScreen, sizeOfScreen)
-                      Main.main4)
-                   Graphics.Gloss.Data.Color.white
-                   Main.main2
-                     `cast`
-                   (Sym (GHC.Types.N:IO[0]
-                             <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
-                   Graphics.Gloss.Interface.Pure.Display.display2
-                     `cast`
-                   (<Graphics.Gloss.Data.Controller.Controller>_R
-                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
-                   eta) -}
+  {- Arity: 3, Strictness: <L,U><L,A><S,U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Types.Int)
+                   (w2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 Main.$wplaySnake w w2) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

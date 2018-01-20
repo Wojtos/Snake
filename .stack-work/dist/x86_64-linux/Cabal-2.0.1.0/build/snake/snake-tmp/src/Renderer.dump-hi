@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 19:31:10.298467 UTC
+2018-01-20 21:03:09.787426 UTC
 
 interface main:Renderer 8022
-  interface hash: 1eae0dabeff38750e2f246f76ceb98db
+  interface hash: 76177795732f8aae03145e60653d1363
   ABI hash: 75d402eb2bdc75998b543608f65b964d
   export-list hash: d0a8aaa82260f1a75c30619711d10246
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -51,13 +51,13 @@ import  -/  gloss-1.11.1.1:Graphics.Gloss 42927f6b8c3c9969ac9a5d586179f98b
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Picture bd23f879edf35d61a970a4674d345577
 import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Color 67e41f501ac28fdfb0b383296bc15e4c
 import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture 44e3080be4942669c6c3efda5283b96a
-import  -/  GameSettings 1b0570c44b4f750e285f2e8693289042
-  exports: 9ae63ff9e2178c0419c37c6f14559068
+import  -/  GameSettings 158a7e7d5030922450fd101754d5ea0f
+  exports: fef611c6f275e46a65f7ac1bc6338fca
   appleColor f4bf5b25af02fd475f8200b9a8d147db
   sizeOfTile 73dfbe4eb744b0fcbc9df0736581bcef
   snakeColor c8cd7e0f91ece385c20f3ee6b5e5dbab
-import  -/  GameState 113268a48c3e06c15982ed972953165b
-  exports: 46e397366e2691425921ce5dcc3899c0
+import  -/  GameState f55de4d8fd383a980a004bc8ebc8a8c7
+  exports: b040005083cbdb0c0a388c6a155d3345
   GameState 4ac8d945e93e405b94c13340932266e0
   Position 9b66e2b9ae1f48a2fc148b75d149bea2
   applePos 4ac8d945e93e405b94c13340932266e0
