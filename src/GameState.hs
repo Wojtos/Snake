@@ -25,12 +25,16 @@ data GameState = Game -- ^ data about state of the game
  , applePos :: Position 
  , orientation :: Orientation
  , tilesToBeAdded :: Int
+ , isPaused :: Bool
+ , changeOfOrientation :: Bool
  }
 
 initialGameState :: GameState -- ^ GameState at the begining of the game
 initialGameState = Game {
 	snakeBody = [(0, 0)],
-	applePos = (-1, 0),
+	applePos = (1, 0),
 	orientation = GameState.Left,
-	tilesToBeAdded = 3
+	tilesToBeAdded = 3,
+	isPaused = False,
+	changeOfOrientation = False
 }  

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 21:03:09.729394 UTC
+2018-01-20 23:26:20.313232 UTC
 
 interface main:GameSettings 8022
-  interface hash: 2d920fb20b053496c79e6f3f591dcfc9
-  ABI hash: 158a7e7d5030922450fd101754d5ea0f
-  export-list hash: fef611c6f275e46a65f7ac1bc6338fca
+  interface hash: 41473f39dbc318ef9b7a50721313f10f
+  ABI hash: 97c2907765be7873f81a15daf4a1311f
+  export-list hash: 9e7c4cfb78ea15b7dd5ff3194c2d8876
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -14,10 +14,12 @@ interface main:GameSettings 8022
 exports:
   GameSettings.appleColor
   GameSettings.bgColor
+  GameSettings.rewardForEatingApple
   GameSettings.sizeOfBoard
   GameSettings.sizeOfScreen
   GameSettings.sizeOfTile
   GameSettings.snakeColor
+  GameSettings.wallColor
 module dependencies:
 package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
                       ObjectName-1.1.0.1 OpenGL-3.0.2.0 OpenGLRaw-3.2.7.0
@@ -72,16 +74,22 @@ b655def1669d2c19970608c3d09db38f
 401c942290a3c362976c53238e7fedcf
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-f4bf5b25af02fd475f8200b9a8d147db
+f37904eb9512de218984f1b8cf49eb29
   appleColor :: Graphics.Gloss.Internals.Data.Color.Color
-  {- Strictness: m,
-     Unfolding: InlineRule (0, True, True)
-                Graphics.Gloss.Data.Color.red -}
-82df6b1b11c7e230453dad583a2d7e43
+  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        1.2#
+                        0.2#
+                        0.2#
+                        1.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
+                 Graphics.Gloss.Internals.Data.Color.RGBA ww6 ww7 ww8 ww9 }) -}
+1c653a50025239264d3a3b3bf57128e3
   bgColor :: Graphics.Gloss.Internals.Data.Color.Color
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
-                Graphics.Gloss.Data.Color.white -}
+                Graphics.Gloss.Data.Color.black -}
+303c8dbac0757e0047281654107b75b5
+  rewardForEatingApple :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
 821fd2952cb158c53fd36647f3719996
   sizeOfBoard :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 17#) -}
@@ -91,11 +99,27 @@ f4bf5b25af02fd475f8200b9a8d147db
 73dfbe4eb744b0fcbc9df0736581bcef
   sizeOfTile :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 16#) -}
-c8cd7e0f91ece385c20f3ee6b5e5dbab
+3a56c2dc26761e582a7a308a04c2eef0
   snakeColor :: Graphics.Gloss.Internals.Data.Color.Color
-  {- Strictness: m,
-     Unfolding: InlineRule (0, True, True)
-                Graphics.Gloss.Data.Color.black -}
+  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        -0.2#
+                        0.8#
+                        -0.2#
+                        1.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
+                 Graphics.Gloss.Internals.Data.Color.RGBA ww6 ww7 ww8 ww9 }) -}
+5df5228648b31a2c48c7a78eec146a99
+  wallColor :: Graphics.Gloss.Internals.Data.Color.Color
+  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        0.2#
+                        0.2#
+                        0.2#
+                        1.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
+                 case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        (GHC.Prim.plusFloat# ww6 0.2#)
+                        (GHC.Prim.plusFloat# ww7 0.2#)
+                        (GHC.Prim.plusFloat# ww8 0.2#)
+                        ww9 of ww1 { (#,,,#) ww2 ww3 ww4 ww11 ->
+                 Graphics.Gloss.Internals.Data.Color.RGBA ww2 ww3 ww4 ww11 } }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 22:29:45.548384 UTC
+2018-01-20 23:36:16.37904 UTC
 
 interface main:UpdateGame 8022
-  interface hash: a016cd4a37f9619d0e7f8bae2ef04cac
-  ABI hash: df4aa2874d90f6ca3482f54648a2e12f
+  interface hash: 8f59913a5091584ff2f6e9583119d723
+  ABI hash: 46fabd46a9cdae25cc237b831e8b800e
   export-list hash: fdfd86c4527dfe5faac2a1bccf2a3036
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -52,6 +52,7 @@ import  -/  base-4.10.1.0:Data.Foldable 9ed87455d68e87ff2b5b8725eae9897e
 import  -/  base-4.10.1.0:Data.List 4ab7fa2a1b87502b23af891a384f0506
 import  -/  base-4.10.1.0:Data.OldList 555420b092ca8cf0a8f9666bc0e07dcf
 import  -/  base-4.10.1.0:Data.Tuple 8fa1305aa5032ea35e2a54fa5f1e78f9
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
 import  -/  base-4.10.1.0:GHC.List e3060fbeb44ce0038e6b4dedf2dd9cf1
 import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
 import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
@@ -59,19 +60,22 @@ import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
 import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
 import  -/  gloss-1.11.1.1:Graphics.Gloss 42927f6b8c3c9969ac9a5d586179f98b
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.ViewPort e3a26d6e96e6a33b79cbc9b4d07171f7
-import  -/  GameSettings 158a7e7d5030922450fd101754d5ea0f
-  exports: fef611c6f275e46a65f7ac1bc6338fca
+import  -/  GameSettings 97c2907765be7873f81a15daf4a1311f
+  exports: 9e7c4cfb78ea15b7dd5ff3194c2d8876
+  rewardForEatingApple 303c8dbac0757e0047281654107b75b5
   sizeOfBoard 821fd2952cb158c53fd36647f3719996
-import  -/  GameState f55de4d8fd383a980a004bc8ebc8a8c7
-  exports: b040005083cbdb0c0a388c6a155d3345
-  Game e613cf2b6c5268b3a449dc78d01ece57
-  GameState 4ac8d945e93e405b94c13340932266e0
+import  -/  GameState 34bdaa777cdd110756a994867d839a75
+  exports: 8530cf8ba6ee2c21a975768af433dc25
+  Game 88e3716dfed1e166dd69607fe1106d22
+  GameState 1164b0766c2ec95b6661ef60eedf521b
   Position 9b66e2b9ae1f48a2fc148b75d149bea2
-  applePos 4ac8d945e93e405b94c13340932266e0
-  orientation 4ac8d945e93e405b94c13340932266e0
-  orientationToPosition 22fcac6ae4401c140a7c8bfb9c6ffa1b
-  snakeBody 4ac8d945e93e405b94c13340932266e0
-  tilesToBeAdded 4ac8d945e93e405b94c13340932266e0
+  applePos 1164b0766c2ec95b6661ef60eedf521b
+  changeOfOrientation 1164b0766c2ec95b6661ef60eedf521b
+  isPaused 1164b0766c2ec95b6661ef60eedf521b
+  orientation 1164b0766c2ec95b6661ef60eedf521b
+  orientationToPosition e420451c3f655885783b97981f34ade9
+  snakeBody 1164b0766c2ec95b6661ef60eedf521b
+  tilesToBeAdded 1164b0766c2ec95b6661ef60eedf521b
 import  -/  random-1.1:System.Random 7425ef878fcdaaac7b607c0c2d51fc7c
 5e4582f7866ee5bdf1adf2555a10de23
   $trModule :: GHC.Types.Module
@@ -98,93 +102,73 @@ cdc7e59200cf556af43e5907e57f68c5
     GHC.Prim.Int#
     -> [GameState.Position] -> (GHC.Types.Int, GHC.Types.Int)
   {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0] -}
-3589df7bec6821aa687d65bc8cfa27fd
+10e1b734f80f3175612e370da810652f
   $wmoveSnake ::
-    GameState.GameState
-    -> (# GameState.Position, [GameState.Position] #)
-  {- Arity: 1, Strictness: <L,U(U,A,U,A)>, Inline: [0],
-     Unfolding: (\ (w :: GameState.GameState) ->
-                 (# (case w of wild { GameState.Game ds1 ds2 ds3 ds4 ->
-                     case ds3 of wild1 {
-                       DEFAULT
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7 -> case x of wild3 { (,) x1 ds8 -> x1 } }
-                       GameState.Right
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7
-                            -> case x of wild3 { (,) x1 ds8 ->
-                               case x1 of wild4 { GHC.Types.I# y ->
-                               GHC.Types.I# (GHC.Prim.+# 1# y) } } }
-                       GameState.Left
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7
-                            -> case x of wild3 { (,) x1 ds8 ->
-                               case x1 of wild4 { GHC.Types.I# y ->
-                               GHC.Types.I# (GHC.Prim.+# -1# y) } } } } },
-                     case w of wild { GameState.Game ds1 ds2 ds3 ds4 ->
-                     case ds3 of wild1 {
-                       GameState.Up
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7
-                            -> case x of wild3 { (,) ds8 y ->
-                               case y of wild4 { GHC.Types.I# y1 ->
-                               GHC.Types.I# (GHC.Prim.+# 1# y1) } } }
-                       GameState.Right
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7 -> case x of wild3 { (,) ds8 y -> y } }
-                       GameState.Down
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7
-                            -> case x of wild3 { (,) ds8 y ->
-                               case y of wild4 { GHC.Types.I# y1 ->
-                               GHC.Types.I# (GHC.Prim.+# -1# y1) } } }
-                       GameState.Left
-                       -> case ds1 of wild2 {
-                            [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
-                            : x ds7 -> case x of wild3 { (,) ds8 y -> y } } } }),
-                    GameState.snakeBody w #)) -}
-f8decc913a763fd9d698a7f8c9be27d8
+    [GameState.Position]
+    -> GameState.Orientation
+    -> GHC.Types.Int
+    -> GHC.Types.Bool
+    -> (# [GameState.Position], GHC.Types.Int #)
+  {- Arity: 4, Strictness: <L,U><L,U><L,U(U)><S,1*U>, Inline: [0] -}
+c4d8e423d758009ac68509bb3ef04931
   $wupdate ::
     GameState.GameState
     -> (# [GameState.Position], GameState.Position,
-          GameState.Orientation, GHC.Types.Int #)
-  {- Arity: 1, Strictness: <L,U(U,1*U(U(U),U(U)),U,1*U(U))>,
+          GameState.Orientation, GHC.Types.Int, GHC.Types.Bool,
+          GHC.Types.Bool #)
+  {- Arity: 1, Strictness: <L,U(U,U(U(U),U(U)),U,U(U),U,A)>,
      Inline: [0],
      Unfolding: (\ (w :: GameState.GameState) ->
                  let {
+                   ds :: ([GameState.Position], GHC.Types.Int)
+                   = case w of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                     case UpdateGame.$wmoveSnake
+                            ww1
+                            ww3
+                            ww4
+                            ww5 of ww7 { (#,#) ww8 ww9 ->
+                     (ww8, ww9) } }
+                 } in
+                 let {
                    newSnakeBody :: [GameState.Position]
-                   = case UpdateGame.$wmoveSnake w of ww { (#,#) ww1 ww2 ->
-                     GHC.Types.: @ GameState.Position ww1 ww2 }
+                   = case ds of wild { (,) newSnakeBody1 newTilesToBeAdded ->
+                     newSnakeBody1 }
+                 } in
+                 let {
+                   isAppleEaten :: GHC.Types.Bool
+                   = case w of wild { GameState.Game ds1 ds2 ds3 ds4 ds5 ds6 ->
+                     case newSnakeBody of wild1 {
+                       [] -> case GHC.List.badHead ret_ty GHC.Types.Bool of {}
+                       : x ds7
+                       -> case ds2 of ww { (,) ww1 ww2 ->
+                          case x of ww3 { (,) ww4 ww5 ->
+                          case ww1 of wild2 { GHC.Types.I# x1 ->
+                          case ww4 of wild3 { GHC.Types.I# y ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.==# x1 y) of wild4 {
+                            GHC.Types.False -> GHC.Types.False
+                            GHC.Types.True
+                            -> case ww2 of wild5 { GHC.Types.I# x2 ->
+                               case ww5 of wild6 { GHC.Types.I# y1 ->
+                               GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.==# x2 y1) } } } } } } } } }
                  } in
                  (# newSnakeBody,
-                    case w of wild { GameState.Game ds1 ds2 ds3 ds4 ->
-                    case newSnakeBody of wild1 {
-                      [] -> case GHC.List.badHead ret_ty GameState.Position of {}
-                      : x ds7
-                      -> case ds2 of ww { (,) ww1 ww2 ->
-                         case x of ww3 { (,) ww4 ww5 ->
-                         case ww1 of wild2 { GHC.Types.I# x1 ->
-                         case ww4 of wild3 { GHC.Types.I# y ->
-                         case GHC.Prim.tagToEnum#
-                                @ GHC.Types.Bool
-                                (GHC.Prim.==# x1 y) of wild4 {
-                           GHC.Types.False -> ww
-                           GHC.Types.True
-                           -> case ww2 of wild5 { GHC.Types.I# x2 ->
-                              case ww5 of wild6 { GHC.Types.I# y1 ->
-                              case GHC.Prim.tagToEnum#
-                                     @ GHC.Types.Bool
-                                     (GHC.Prim.==# x2 y1) of wild7 {
-                                GHC.Types.False -> ww
-                                GHC.Types.True
-                                -> UpdateGame.$wateApple 17# wild1 } } } } } } } } } },
-                    GameState.orientation w, GameState.tilesToBeAdded w #)) -}
+                    case isAppleEaten of wild {
+                      GHC.Types.False -> GameState.applePos w
+                      GHC.Types.True -> UpdateGame.$wateApple 17# newSnakeBody },
+                    GameState.orientation w,
+                    case isAppleEaten of wild {
+                      GHC.Types.False
+                      -> case ds of wild1 { (,) newSnakeBody1 newTilesToBeAdded ->
+                         newTilesToBeAdded }
+                      GHC.Types.True
+                      -> case ds of wild1 { (,) newSnakeBody1 newTilesToBeAdded ->
+                         case newTilesToBeAdded of wild2 { GHC.Types.I# x ->
+                         GHC.Types.I# (GHC.Prim.+# x 3#) } } },
+                    GameState.isPaused w, GHC.Types.False #)) -}
 bebde92ea26e9487d806cd75c192cba2
   ateApple ::
     GHC.Types.Int -> [GameState.Position] -> GameState.Position
@@ -193,25 +177,30 @@ bebde92ea26e9487d806cd75c192cba2
                 (\ (w :: GHC.Types.Int) (w1 :: [GameState.Position]) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  UpdateGame.$wateApple ww1 w1 }) -}
-8c63157d405afaee6e72c343b00c2201
-  moveSnake :: GameState.GameState -> [GameState.Position]
-  {- Arity: 1, Strictness: <L,U(U,A,U,A)>m2, Inline: [0],
+fd77f401001ec377d421e0e2b1291ea3
+  moveSnake ::
+    GameState.GameState -> ([GameState.Position], GHC.Types.Int)
+  {- Arity: 1, Strictness: <S(LLLLSL),1*U(U,A,U,U(U),1*U,A)>m,
+     Inline: [0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: GameState.GameState) ->
-                 case UpdateGame.$wmoveSnake w of ww { (#,#) ww1 ww2 ->
-                 GHC.Types.: @ GameState.Position ww1 ww2 }) -}
-89e62d06b7be4854819ad50d09f2ca68
+                 case w of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 case UpdateGame.$wmoveSnake
+                        ww1
+                        ww3
+                        ww4
+                        ww5 of ww7 { (#,#) ww8 ww9 ->
+                 (ww8, ww9) } }) -}
+512f288a1d301f0266de777dd014e673
   update ::
-    Graphics.Gloss.Data.ViewPort.ViewPort
-    -> GHC.Types.Float -> GameState.GameState -> GameState.GameState
-  {- Arity: 3, Strictness: <L,A><L,A><L,U(U,U(U(U),U(U)),U,U(U))>m,
+    GHC.Types.Float -> GameState.GameState -> GameState.GameState
+  {- Arity: 2, Strictness: <L,A><L,U(U,U(U(U),U(U)),U,U(U),U,A)>m,
      Inline: [0],
-     Unfolding: InlineRule (3, True, False)
-                (\ (w :: Graphics.Gloss.Data.ViewPort.ViewPort)
-                   (w1 :: GHC.Types.Float)
-                   (w2 :: GameState.GameState) ->
-                 case UpdateGame.$wupdate w2 of ww { (#,,,#) ww1 ww2 ww3 ww4 ->
-                 GameState.Game ww1 ww2 ww3 ww4 }) -}
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Float) (w1 :: GameState.GameState) ->
+                 case UpdateGame.$wupdate
+                        w1 of ww { (#,,,,,#) ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:
