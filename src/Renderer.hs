@@ -6,7 +6,7 @@ import GameSettings
 
 
 render :: GameState -> Picture
-render state = pictures (snakeBody.map(\x -> x-> posToPixelCord snakeColor x) ++ (posToPixelCord  appleColor applePos))
+render state = pictures (map (\x -> posToPixelCord snakeColor x) (snakeBody state) ++ [(posToPixelCord appleColor (applePos state ))])
 
 posToPixelCord :: Color -> Position -> Picture
-posToPixelCord color (x, y) = translate (x * sizeOfTile) (y * sizeOfTile) $ color col $ rectangleSolid (fromIntegral sizeOfTile) (fromIntegral sizeOfTile)
+posToPixelCord col (x, y) = translate (fromIntegral (x * sizeOfTile)) (fromIntegral (y * sizeOfTile)) $ color col $ rectangleSolid (fromIntegral sizeOfTile) (fromIntegral sizeOfTile)

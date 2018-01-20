@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 17:58:57.898676 UTC
+2018-01-20 19:31:10.322045 UTC
 
 interface main:UpdateGame 8022
-  interface hash: 140b78515625493c8b49d9af7012df7f
+  interface hash: 16b7674e70461820b490eaee25b8300a
   ABI hash: e0c53a40613ca960a4b35e4bc663726e
   export-list hash: 86fefa944ec996fe91f42559937cd9a8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -43,8 +43,8 @@ family instance modules: base-4.10.1.0:Control.Applicative
                          text-1.2.2.2:Data.Text
 import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
 import  -/  gloss-1.11.1.1:Graphics.Gloss 42927f6b8c3c9969ac9a5d586179f98b
-import  -/  GameState 36d822583041085ce1f660de2cb0b72a
-  exports: 35931c8cfb0f231b02f6248bc889c3ac
+import  -/  GameState 113268a48c3e06c15982ed972953165b
+  exports: 46e397366e2691425921ce5dcc3899c0
 5e4582f7866ee5bdf1adf2555a10de23
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,

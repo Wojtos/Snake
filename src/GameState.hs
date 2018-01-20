@@ -1,6 +1,6 @@
 module GameState where 
 
-type Postion = (Int, Int)
+type Position = (Int, Int)
 
 data Orientation = Up |
                    Right |
@@ -15,15 +15,15 @@ orientationToInt x | x == GameState.Up = 0
                    | x == GameState.Left = 3
 
 data GameState = Game -- ^ data about state of the game
- { snakeBody :: [Postion]
- , applePos :: Postion
+ { snakeBody :: [Position]
+ , applePos :: Position 
  , orientation :: Orientation
  , tilesToBeAdded :: Int
  }
 
 initialGameState :: GameState -- ^ GameState at the begining of the game
 initialGameState = Game {
-	snakeBody = [(0, 0), (0, 1)],
+	snakeBody = [(0, 0)],
 	applePos = (1, 0),
 	orientation = GameState.Left,
 	tilesToBeAdded = 3
