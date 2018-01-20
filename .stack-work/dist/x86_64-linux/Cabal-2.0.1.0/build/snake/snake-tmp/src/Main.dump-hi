@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 21:05:27.79158 UTC
+2018-01-20 22:29:45.685277 UTC
 
 interface main:Main 8022
-  interface hash: e1c66a14b0dca3a19166fcedcf04f818
-  ABI hash: b853b6bd6be83e573cadfb6628dc25c8
-  export-list hash: 0c6dd57704519eb66bc2e35415b75158
+  interface hash: 6c7136086208ccf7aecf3abfa8dc8d9c
+  ABI hash: e531656413ae9163601dc7280c905318
+  export-list hash: d290ae42c1f53bea5f37ea4492184a4a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8ba87647430bd4dec4a8dfcbbc06ed1d
   sig of: Nothing
@@ -21,8 +21,12 @@ package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
                       bmp-1.2.6.3 bytestring-0.10.8.2 containers-0.5.10.2 deepseq-1.4.3.0
                       fixed-0.2.1.1 ghc-prim-0.5.1.1 gloss-1.11.1.1
                       gloss-rendering-1.11.1.1 half-0.2.2.3 integer-gmp-1.0.1.0
-                      stm-2.4.4.1 text-1.2.2.2
-orphans: gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture
+                      random-1.1 stm-2.4.4.1 text-1.2.2.2 time-1.8.0.2
+orphans: time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture
          stm-2.4.4.1:Control.Monad.STM text-1.2.2.2:Data.Text
          binary-0.8.5.1:Data.Binary.Generic text-1.2.2.2:Data.Text.Show
          bytestring-0.10.8.2:Data.ByteString.Builder base-4.10.1.0:GHC.Float
@@ -56,9 +60,9 @@ import  -/  GameState f55de4d8fd383a980a004bc8ebc8a8c7
 import  -/  Renderer 75d402eb2bdc75998b543608f65b964d
   exports: d0a8aaa82260f1a75c30619711d10246
   render 1114ddbfc74bafad818776389d142ad9
-import  -/  UpdateGame 075c130236d6c45636638aaf6b7bb22d
-  exports: 5a88084840f97dd8865523048154b407
-  update 7ff7c1fc069a6da298792bd0560d8a3c
+import  -/  UpdateGame df4aa2874d90f6ca3482f54648a2e12f
+  exports: fdfd86c4527dfe5faac2a1bccf2a3036
+  update 89e62d06b7be4854819ad50d09f2ca68
 9d72b2fddb818bcd8919052935e0f1f3
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -77,7 +81,7 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-dbd4548e9b36de89da495e13677712b6
+b6f1aeac95327cbc09ba4c2cb37b5ad8
   $wplaySnake ::
     GHC.Types.Int
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -110,12 +114,12 @@ dbd4548e9b36de89da495e13677712b6
                          ->_R Sym (GHC.Types.N:IO[0] <GameState.GameState>_R))
                         w1 of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, GHC.Tuple.() #) }) -}
-571cdd45854636fed053962798a7007e
+a98ae7528b8c65d3c8e5312346e2bae3
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-a362d8c1ebc8c94a68329fe87a089f04
+75dacefec087063a4ee1e6f7e8980f4d
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -149,7 +153,7 @@ dd81c58984a2edc8204def1a389d1fac
 86179a30ba9d225023745b35cef768b7
   main11 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("Snake"#) -}
-894b6479ccfab6e4f1560d344b6d0d93
+830814a2f3763be229ce58f4cf2616b6
   main12 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -157,7 +161,7 @@ dd81c58984a2edc8204def1a389d1fac
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-f7a6cb1f851f8319311eddd666964d24
+898c44796d52d902efea59e48ec2fd17
   main2 ::
     Graphics.Gloss.Data.ViewPort.ViewPort
     -> GHC.Types.Float
@@ -207,7 +211,7 @@ a18f62f37942016174309aa37b0afd33
 3ab90bae283988e9553ce05aeaec86d3
   main9 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 272#) -}
-dd02282c60087fbbda48a64ec6e62787
+74c9c0fdbf15a485e0ab775c8ae48666
   playSnake :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,U><L,A><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -216,7 +220,7 @@ dd02282c60087fbbda48a64ec6e62787
                 (<GHC.Types.Int>_R
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-5bd06d9a4f24b405693959d2922fba2c
+a5722bea70fe7bab44dd3ec3509af832
   playSnake1 ::
     GHC.Types.Int
     -> GHC.Types.Int

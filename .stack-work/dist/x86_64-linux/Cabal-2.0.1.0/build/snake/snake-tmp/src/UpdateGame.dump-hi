@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 21:05:27.659716 UTC
+2018-01-20 22:29:45.548384 UTC
 
 interface main:UpdateGame 8022
-  interface hash: 00e64917f893bfb00211a804e593c5a3
-  ABI hash: 075c130236d6c45636638aaf6b7bb22d
-  export-list hash: 5a88084840f97dd8865523048154b407
+  interface hash: a016cd4a37f9619d0e7f8bae2ef04cac
+  ABI hash: df4aa2874d90f6ca3482f54648a2e12f
+  export-list hash: fdfd86c4527dfe5faac2a1bccf2a3036
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -22,11 +22,15 @@ package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
                       bmp-1.2.6.3 bytestring-0.10.8.2 containers-0.5.10.2 deepseq-1.4.3.0
                       fixed-0.2.1.1 ghc-prim-0.5.1.1 gloss-1.11.1.1
                       gloss-rendering-1.11.1.1 half-0.2.2.3 integer-gmp-1.0.1.0
-                      stm-2.4.4.1 text-1.2.2.2
+                      random-1.1 stm-2.4.4.1 text-1.2.2.2 time-1.8.0.2
 orphans: gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture
          stm-2.4.4.1:Control.Monad.STM text-1.2.2.2:Data.Text
          binary-0.8.5.1:Data.Binary.Generic text-1.2.2.2:Data.Text.Show
-         bytestring-0.10.8.2:Data.ByteString.Builder base-4.10.1.0:GHC.Float
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian base-4.10.1.0:GHC.Float
          base-4.10.1.0:GHC.Base
 family instance modules: base-4.10.1.0:Control.Applicative
                          base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
@@ -44,6 +48,7 @@ family instance modules: base-4.10.1.0:Control.Applicative
                          containers-0.5.10.2:Data.Sequence.Internal
                          containers-0.5.10.2:Data.Set.Internal containers-0.5.10.2:Data.Tree
                          text-1.2.2.2:Data.Text
+import  -/  base-4.10.1.0:Data.Foldable 9ed87455d68e87ff2b5b8725eae9897e
 import  -/  base-4.10.1.0:Data.List 4ab7fa2a1b87502b23af891a384f0506
 import  -/  base-4.10.1.0:Data.OldList 555420b092ca8cf0a8f9666bc0e07dcf
 import  -/  base-4.10.1.0:Data.Tuple 8fa1305aa5032ea35e2a54fa5f1e78f9
@@ -67,6 +72,7 @@ import  -/  GameState f55de4d8fd383a980a004bc8ebc8a8c7
   orientationToPosition 22fcac6ae4401c140a7c8bfb9c6ffa1b
   snakeBody 4ac8d945e93e405b94c13340932266e0
   tilesToBeAdded 4ac8d945e93e405b94c13340932266e0
+import  -/  random-1.1:System.Random 7425ef878fcdaaac7b607c0c2d51fc7c
 5e4582f7866ee5bdf1adf2555a10de23
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -87,83 +93,11 @@ b90731bd879fd88759ee65eab26e83a5
 06618909ea673c9c45a34d348016247d
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-cbee1eb2beed25caf972d411399193df
+cdc7e59200cf556af43e5907e57f68c5
   $wateApple ::
     GHC.Prim.Int#
     -> [GameState.Position] -> (GHC.Types.Int, GHC.Types.Int)
-  {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0],
-     Unfolding: (\ (ww :: GHC.Prim.Int#) (w :: [GameState.Position]) ->
-                 let {
-                   ww4 :: GHC.Prim.Int# = GHC.Prim.uncheckedIShiftRA# ww 1#
-                 } in
-                 let {
-                   x0 :: GHC.Prim.Int#
-                   = GHC.Prim.negateInt# (GHC.Prim.uncheckedIShiftRA# ww 1#)
-                 } in
-                 case GHC.Prim.tagToEnum#
-                        @ GHC.Types.Bool
-                        (GHC.Prim.># x0 ww4) of wild {
-                   GHC.Types.False
-                   -> let {
-                        x1 :: GHC.Prim.Int# = GHC.Prim.negateInt# ww4
-                      } in
-                      let {
-                        lvl1 :: [GHC.Types.Int]
-                        = case GHC.Prim.tagToEnum#
-                                 @ GHC.Types.Bool
-                                 (GHC.Prim.># x1 ww4) of wild1 {
-                            GHC.Types.False
-                            -> letrec {
-                                 go :: GHC.Prim.Int# -> [GHC.Types.Int]
-                                   {- Arity: 1, Strictness: <L,U> -}
-                                 = \ (x :: GHC.Prim.Int#) ->
-                                   GHC.Types.:
-                                     @ GHC.Types.Int
-                                     (GHC.Types.I# x)
-                                     (case GHC.Prim.tagToEnum#
-                                             @ GHC.Types.Bool
-                                             (GHC.Prim.==# x ww4) of wild2 {
-                                        GHC.Types.False -> go (GHC.Prim.+# x 1#)
-                                        GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int })
-                               } in
-                               go x1
-                            GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int }
-                      } in
-                      letrec {
-                        go :: GHC.Prim.Int# -> [(GHC.Types.Int, GHC.Types.Int)]
-                          {- Arity: 1, Strictness: <L,U> -}
-                        = \ (x :: GHC.Prim.Int#) ->
-                          let {
-                            ds :: GHC.Types.Int = GHC.Types.I# x
-                          } in
-                          let {
-                            z :: [(GHC.Types.Int, GHC.Types.Int)]
-                            = case GHC.Prim.tagToEnum#
-                                     @ GHC.Types.Bool
-                                     (GHC.Prim.==# x ww4) of wild1 {
-                                GHC.Types.False -> go (GHC.Prim.+# x 1#)
-                                GHC.Types.True -> GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int) }
-                          } in
-                          letrec {
-                            go1 :: [GHC.Types.Int] -> [(GHC.Types.Int, GHC.Types.Int)]
-                              {- Arity: 1, Strictness: <S,1*U> -}
-                            = \ (ds1 :: [GHC.Types.Int]) ->
-                              case ds1 of wild1 {
-                                [] -> z
-                                : y ys
-                                -> GHC.Types.: @ (GHC.Types.Int, GHC.Types.Int) (ds, y) (go1 ys) }
-                          } in
-                          go1 lvl1
-                      } in
-                      UpdateGame.ateApple_go1
-                        (UpdateGame.ateApple_go w (go x0))
-                        (GHC.List.lastError @ (GHC.Types.Int, GHC.Types.Int))
-                   GHC.Types.True
-                   -> UpdateGame.ateApple_go1
-                        (UpdateGame.ateApple_go
-                           w
-                           (GHC.Types.[] @ (GHC.Types.Int, GHC.Types.Int)))
-                        (GHC.List.lastError @ (GHC.Types.Int, GHC.Types.Int)) }) -}
+  {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0] -}
 3589df7bec6821aa687d65bc8cfa27fd
   $wmoveSnake ::
     GameState.GameState
@@ -215,7 +149,7 @@ cbee1eb2beed25caf972d411399193df
                             [] -> case GHC.List.badHead ret_ty GHC.Types.Int of {}
                             : x ds7 -> case x of wild3 { (,) ds8 y -> y } } } }),
                     GameState.snakeBody w #)) -}
-9cc519a8acf020e6688a2d41a65fe8f0
+f8decc913a763fd9d698a7f8c9be27d8
   $wupdate ::
     GameState.GameState
     -> (# [GameState.Position], GameState.Position,
@@ -251,25 +185,14 @@ cbee1eb2beed25caf972d411399193df
                                 GHC.Types.True
                                 -> UpdateGame.$wateApple 17# wild1 } } } } } } } } } },
                     GameState.orientation w, GameState.tilesToBeAdded w #)) -}
-c200ad88714efc3af46d4e991b32ccbf
+bebde92ea26e9487d806cd75c192cba2
   ateApple ::
     GHC.Types.Int -> [GameState.Position] -> GameState.Position
-  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: [0],
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,U>, Inline: [0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: GHC.Types.Int) (w1 :: [GameState.Position]) ->
                  case w of ww { GHC.Types.I# ww1 ->
                  UpdateGame.$wateApple ww1 w1 }) -}
-4b93aa299615eb76e9f2ef761b3786d3
-  ateApple_go ::
-    [(GHC.Types.Int, GHC.Types.Int)]
-    -> [(GHC.Types.Int, GHC.Types.Int)]
-    -> [(GHC.Types.Int, GHC.Types.Int)]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
-8c86fcfa2e801ad05dffd28157535e0b
-  ateApple_go1 ::
-    [(GHC.Types.Int, GHC.Types.Int)]
-    -> (GHC.Types.Int, GHC.Types.Int) -> (GHC.Types.Int, GHC.Types.Int)
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U,U)> -}
 8c63157d405afaee6e72c343b00c2201
   moveSnake :: GameState.GameState -> [GameState.Position]
   {- Arity: 1, Strictness: <L,U(U,A,U,A)>m2, Inline: [0],
@@ -277,7 +200,7 @@ c200ad88714efc3af46d4e991b32ccbf
                 (\ (w :: GameState.GameState) ->
                  case UpdateGame.$wmoveSnake w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ GameState.Position ww1 ww2 }) -}
-7ff7c1fc069a6da298792bd0560d8a3c
+89e62d06b7be4854819ad50d09f2ca68
   update ::
     Graphics.Gloss.Data.ViewPort.ViewPort
     -> GHC.Types.Float -> GameState.GameState -> GameState.GameState

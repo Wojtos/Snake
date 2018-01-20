@@ -16,12 +16,15 @@ moveSnake state = (xToAdd + xOld, yToAdd + yOld):(snakeBody state)
   	yOld = snd $ head $ snakeBody state 
 
 ateApple :: Int -> [Position] -> Position
-ateApple sizeOfBoard snakeBody = freeBoard !! randomNumber
+ateApple sizeOfBoard newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `mod` length freeBoard)
   where
   board = [(x,y) | x <- [(-(sizeOfBoard) `div` 2)..((sizeOfBoard) `div` 2)], y <- [(-(sizeOfBoard) `div` 2)..((sizeOfBoard) `div` 2)]]
-  freeBoard =  board \\ snakeBody
-  g = getStdGen
-  randomNumber =  fst $ randomR (0, length freeBoard - 1) g
+  freeBoard =  board \\ newSnakeBody
+  p1 = sizeOfBoard +  fst (last newSnakeBody)
+  p2 = sizeOfBoard + snd (last newSnakeBody)
+  p3 = sizeOfBoard + fst (head newSnakeBody)
+  p4 = sizeOfBoard + snd (head newSnakeBody)
+
 
 update :: (ViewPort -> Float -> GameState -> GameState) -- ^ step
 update _ _ state = Game {
