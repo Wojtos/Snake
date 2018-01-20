@@ -11,8 +11,9 @@ sizeOfBoard = 17
 sizeOfScreen :: Int
 sizeOfScreen = sizeOfTile * (sizeOfBoard)
 
-bgColor, snakeColor ,appleColor :: Color
+bgColor, snakeColor ,appleColor, wallColor :: Color
 bgColor = white
 snakeColor = black
 appleColor = red
+wallColor = black
 

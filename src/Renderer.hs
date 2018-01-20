@@ -6,7 +6,13 @@ import GameSettings
 
 
 render :: GameState -> Picture
-render state = pictures (map (\x -> posToPixelCord snakeColor x) (snakeBody state) ++ [(posToPixelCord appleColor (applePos state ))])
+render state =
+ pictures $ (map (\x -> posToTile snakeColor x) $ snakeBody state) ++ [posToTile appleColor $ applePos state ] ++ (map (\x -> posToTile wallColor x) generateWalls)
 
-posToPixelCord :: Color -> Position -> Picture
-posToPixelCord col (x, y) = translate (fromIntegral (x * sizeOfTile)) (fromIntegral (y * sizeOfTile)) $ color col $ rectangleSolid (fromIntegral sizeOfTile) (fromIntegral sizeOfTile)
+posToTile :: Color -> Position -> Picture
+posToTile col (x, y) = 
+ translate (fromIntegral (x * sizeOfTile)) (fromIntegral (y * sizeOfTile)) $ color col $ rectangleSolid (fromIntegral sizeOfTile) (fromIntegral sizeOfTile)
+
+generateWalls :: [Position]
+generateWalls = [(i,j) | i <- [-x..x], j <- [-x..x], abs i == x || abs j == x]
+ where x = quot sizeOfBoard 2
