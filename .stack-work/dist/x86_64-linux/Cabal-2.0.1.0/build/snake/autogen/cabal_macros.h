@@ -33,17 +33,6 @@
   (major1) == 1 && (major2) == 11 && (minor) <= 1)
 #endif /* MIN_VERSION_gloss */
 
-/* package random-1.1 */
-#ifndef VERSION_random
-#define VERSION_random "1.1"
-#endif /* VERSION_random */
-#ifndef MIN_VERSION_random
-#define MIN_VERSION_random(major1,major2,minor) (\
-  (major1) <  1 || \
-  (major1) == 1 && (major2) <  1 || \
-  (major1) == 1 && (major2) == 1 && (minor) <= 0)
-#endif /* MIN_VERSION_random */
-
 /* tool alex-3.1.6 */
 #ifndef TOOL_VERSION_alex
 #define TOOL_VERSION_alex "3.1.6"
@@ -177,7 +166,7 @@
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "snake-0.1.0.0-L455Y1vz4Yu4cjOcj2u2GZ-snake"
+#define CURRENT_COMPONENT_ID "snake-0.1.0.0-Ghgb8nOgiPEBiZeivukoi7-snake"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"

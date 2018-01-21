@@ -23,6 +23,4 @@ handleKeys (EventKey (Char 'd') _ _ _) state =
  then state { orientation = GameState.Right, changeOfOrientation = True }
  else state
 handleKeys (EventKey (Char 'r') _ _ _) state = initialGameState
-handleKeys (EventKey (Char 'p') _ _ _) state | isPaused state == True  = state { isPaused = False }
-                                             | isPaused state == False = state { isPaused = True }
 handleKeys _ state = state

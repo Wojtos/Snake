@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 23:36:16.18866 UTC
+2018-01-20 23:57:39.977139 UTC
 
 interface main:Renderer 8022
-  interface hash: 7383825c2c88b6c60372497edb6772d6
-  ABI hash: 010b86002028c5a91091959c1c71c591
+  interface hash: 4a31738939d3b634bf4c3c916da5ffb2
+  ABI hash: 8b8f814c09ca326af91212a293485483
   export-list hash: 452922872f3a13bbac282b4292139586
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -60,12 +60,12 @@ import  -/  GameSettings 97c2907765be7873f81a15daf4a1311f
   sizeOfTile 73dfbe4eb744b0fcbc9df0736581bcef
   snakeColor 3a56c2dc26761e582a7a308a04c2eef0
   wallColor 5df5228648b31a2c48c7a78eec146a99
-import  -/  GameState 34bdaa777cdd110756a994867d839a75
-  exports: 8530cf8ba6ee2c21a975768af433dc25
-  GameState 1164b0766c2ec95b6661ef60eedf521b
+import  -/  GameState 8c8acccd5704b9a1a01c50dc08d44098
+  exports: 7d6b3aaba4df857c2308415979c3e78e
+  GameState c3ad132db64c3b403b1d7aaf8cdd213e
   Position 9b66e2b9ae1f48a2fc148b75d149bea2
-  applePos 1164b0766c2ec95b6661ef60eedf521b
-  snakeBody 1164b0766c2ec95b6661ef60eedf521b
+  applePos c3ad132db64c3b403b1d7aaf8cdd213e
+  snakeBody c3ad132db64c3b403b1d7aaf8cdd213e
 0e2832ebeda36b318c9904793a21195d
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -86,7 +86,7 @@ e29bdf84f3996480183357d54b57cbe7
 7c072f779f4bf5efbfe0294e3e0a4719
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-dfd8d0cacf8259223f0bf26e5bddf5bd
+0db0a0abbda145dce471741daef9b536
   $wrender ::
     GameState.GameState
     -> (# [Graphics.Gloss.Internals.Data.Picture.Picture] #)
@@ -166,7 +166,7 @@ fb19e55bc1f08a2ffba2506d8b3b9db3
 4074f51aa3999171f1e5738a484c7953
   posToTile3 :: GHC.Types.Float
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 16.0#) -}
-4f8fa7a9ad2fcc5e99f0c0a80bb619f0
+54ac3aec5ffdfba9773081c33928fcc2
   render ::
     GameState.GameState
     -> Graphics.Gloss.Internals.Data.Picture.Picture

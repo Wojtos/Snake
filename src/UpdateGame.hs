@@ -5,10 +5,9 @@ import Graphics.Gloss.Data.ViewPort
 import GameState 
 import GameSettings
 import Data.List
-import System.Random
 
 moveSnake :: GameState -> ([Position], Int)
-moveSnake state | isPaused state = (snakeBody state, tilesToBeAdded state)
+moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
                 | tilesToBeAdded state > 0 = ((xToAdd + xOld, yToAdd + yOld):(snakeBody state), tilesToBeAdded state - 1)
                 | otherwise = ((xToAdd + xOld, yToAdd + yOld):(init $ snakeBody state), tilesToBeAdded state)
   where
@@ -27,6 +26,13 @@ ateApple sizeOfBoard newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + 
   p3 = sizeOfBoard + fst (head newSnakeBody)
   p4 = sizeOfBoard + snd (head newSnakeBody)
 
+hasCollisionOccured :: [Position] -> Bool
+hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSnake <= -sizeOfHalfOfBoard) || 
+                            (snd headOfSnake >= sizeOfHalfOfBoard || snd headOfSnake <= -sizeOfHalfOfBoard) ||
+                            (any (==headOfSnake) $ tail body)
+                            where
+                            	headOfSnake = head body
+                            	sizeOfHalfOfBoard = sizeOfBoard `div` 2
 
 update :: (Float -> GameState -> GameState) -- ^ step
 update _ state = Game {
@@ -38,8 +44,9 @@ update _ state = Game {
 	tilesToBeAdded = if isAppleEaten 
 		then newTilesToBeAdded + rewardForEatingApple
 		else newTilesToBeAdded,
-	isPaused = isPaused state,
+	isEnded = gameEnded,
 	changeOfOrientation = False
 } where
 	(newSnakeBody, newTilesToBeAdded) = moveSnake state
-	isAppleEaten = applePos state == (head newSnakeBody)
+	isAppleEaten = applePos state == head newSnakeBody
+	gameEnded = hasCollisionOccured newSnakeBody

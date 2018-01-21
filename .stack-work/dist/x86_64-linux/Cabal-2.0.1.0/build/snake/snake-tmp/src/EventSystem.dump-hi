@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 23:36:16.099425 UTC
+2018-01-21 00:05:20.539758 UTC
 
 interface main:EventSystem 8022
-  interface hash: e00b992f9925a75d2c18ca0813c303c5
-  ABI hash: d4b656d779e8344c40e8f7c3e8707108
+  interface hash: ba4ac232f06e33732ac7aeec6ed115af
+  ABI hash: 9717e03f3279c2f14b59334e14d58ad4
   export-list hash: ee58c842ddc0dfe8f17cb3aa7f43ea8e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -49,15 +49,16 @@ import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Interface.IO.Game 4df1659e96e880a956d4a1857412cb31
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Backend.Types e9f36772aaa47b9123c9f37541e37a9b
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Event 1fe8034af0bd96eeb41f9dff74e936cf
-import  -/  GameState 34bdaa777cdd110756a994867d839a75
-  exports: 8530cf8ba6ee2c21a975768af433dc25
+import  -/  GameState 8c8acccd5704b9a1a01c50dc08d44098
+  exports: 7d6b3aaba4df857c2308415979c3e78e
   Down b66c3a7c3f5252315fa2c741ade70270
-  GameState 1164b0766c2ec95b6661ef60eedf521b
+  GameState c3ad132db64c3b403b1d7aaf8cdd213e
   Left ed3a659978b500b713f76318508139f1
   Right ba74b931c9bb69a1db420d63cfeafd58
   Up 2f0a92fbe247e879f06bc06653ae5bdc
-  initialGameState 84db7fc02fbf372d92791d00f305ad19
-  orientation 1164b0766c2ec95b6661ef60eedf521b
+  changeOfOrientation c3ad132db64c3b403b1d7aaf8cdd213e
+  initialGameState 0824034727ab9a77876c776370875110
+  orientation c3ad132db64c3b403b1d7aaf8cdd213e
   orientationToInt 394dde0f0f0303f2b9ae06c6638f8c33
 f7719f52e0242192f0084f60bb918a2e
   $trModule :: GHC.Types.Module
@@ -79,7 +80,7 @@ dd9643ecfdb0f5173742ebf35317576d
 7407e50ad74684ac246fcfec2e7fcaf8
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-b1e967749f60959d89462b9bed3aaef4
+13590e23f1b40707b0b3df20c85ca8f8
   handleKeys ::
     Graphics.Gloss.Internals.Interface.Event.Event
     -> GameState.GameState -> GameState.GameState
@@ -98,13 +99,33 @@ b1e967749f60959d89462b9bed3aaef4
                              'a'#
                              -> case state of wild3 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
                                 case ds10 of wild4 {
-                                  DEFAULT -> GameState.Game ds8 ds9 GameState.Left ds11 ds12 ds13
+                                  DEFAULT
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Left
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 }
                                   GameState.Right -> wild3
                                   GameState.Left -> wild3 } }
                              'd'#
                              -> case state of wild3 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
                                 case ds10 of wild4 {
-                                  DEFAULT -> GameState.Game ds8 ds9 GameState.Right ds11 ds12 ds13
+                                  DEFAULT
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Right
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 }
                                   GameState.Right -> wild3
                                   GameState.Left -> wild3 } }
                              'r'# -> GameState.initialGameState
@@ -113,23 +134,53 @@ b1e967749f60959d89462b9bed3aaef4
                                 case ds10 of wild4 {
                                   DEFAULT -> wild3
                                   GameState.Right
-                                  -> GameState.Game ds8 ds9 GameState.Down ds11 ds12 ds13
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Down
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 }
                                   GameState.Left
-                                  -> GameState.Game ds8 ds9 GameState.Down ds11 ds12 ds13 } }
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Down
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 } } }
                              'w'#
                              -> case state of wild3 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
                                 case ds10 of wild4 {
                                   DEFAULT -> wild3
                                   GameState.Right
-                                  -> GameState.Game ds8 ds9 GameState.Up ds11 ds12 ds13
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Up
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 }
                                   GameState.Left
-                                  -> GameState.Game
-                                       ds8
-                                       ds9
-                                       GameState.Up
-                                       ds11
-                                       ds12
-                                       ds13 } } } } } }) -}
+                                  -> case ds13 of wild5 {
+                                       GHC.Types.False
+                                       -> GameState.Game
+                                            ds8
+                                            ds9
+                                            GameState.Up
+                                            ds11
+                                            ds12
+                                            GHC.Types.True
+                                       GHC.Types.True -> wild3 } } } } } } }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

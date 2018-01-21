@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-20 23:36:16.020057 UTC
+2018-01-20 23:57:38.502496 UTC
 
 interface main:GameState 8022
-  interface hash: 99852081fc3d83fd985238193fd31d09
-  ABI hash: 34bdaa777cdd110756a994867d839a75
-  export-list hash: 8530cf8ba6ee2c21a975768af433dc25
+  interface hash: 7ef5a458b0e681378ca1d956b17cf9c3
+  ABI hash: 8c8acccd5704b9a1a01c50dc08d44098
+  export-list hash: 7d6b3aaba4df857c2308415979c3e78e
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -15,7 +15,7 @@ exports:
   GameState.initialGameState
   GameState.orientationToInt
   GameState.orientationToPosition
-  GameState.GameState{GameState.Game applePos changeOfOrientation isPaused orientation snakeBody tilesToBeAdded}
+  GameState.GameState{GameState.Game applePos changeOfOrientation isEnded orientation snakeBody tilesToBeAdded}
   GameState.Orientation{GameState.Down GameState.Left GameState.Right GameState.Up}
   GameState.Position
 module dependencies:
@@ -214,19 +214,19 @@ ad413e1f7bee8309ee08c85507c192f3
 6a0a786aa56b700db036cc59b3ce552d
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   data GameState
     = Game {snakeBody :: [GameState.Position],
             applePos :: GameState.Position,
             orientation :: GameState.Orientation,
             tilesToBeAdded :: GHC.Types.Int,
-            isPaused :: GHC.Types.Bool,
+            isEnded :: GHC.Types.Bool,
             changeOfOrientation :: GHC.Types.Bool}
 3d290f688c88cbe1ac3d75314640f7a7
   data Orientation = Up | Right | Down | Left
 9b66e2b9ae1f48a2fc148b75d149bea2
   type Position = (GHC.Types.Int, GHC.Types.Int)
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   applePos :: GameState.GameState -> GameState.Position
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
@@ -235,7 +235,7 @@ ad413e1f7bee8309ee08c85507c192f3
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 ds5 ds6 ->
                  ds2 }) -}
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   changeOfOrientation :: GameState.GameState -> GHC.Types.Bool
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
@@ -244,7 +244,7 @@ ad413e1f7bee8309ee08c85507c192f3
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 ds5 ds6 ->
                  ds6 }) -}
-84db7fc02fbf372d92791d00f305ad19
+0824034727ab9a77876c776370875110
   initialGameState :: GameState.GameState
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GameState.Game
@@ -280,8 +280,8 @@ ad413e1f7bee8309ee08c85507c192f3
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((GameState.initialGameState3,
                   GameState.initialGameState3)) -}
-1164b0766c2ec95b6661ef60eedf521b
-  isPaused :: GameState.GameState -> GHC.Types.Bool
+c3ad132db64c3b403b1d7aaf8cdd213e
+  isEnded :: GameState.GameState -> GHC.Types.Bool
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
      Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
@@ -289,7 +289,7 @@ ad413e1f7bee8309ee08c85507c192f3
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 ds5 ds6 ->
                  ds5 }) -}
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   orientation :: GameState.GameState -> GameState.Orientation
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
@@ -340,7 +340,7 @@ a070ceab4c8514654fadff71e219ab5e
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((GameState.initialGameState3,
                   GameState.initialGameState4)) -}
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   snakeBody :: GameState.GameState -> [GameState.Position]
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
@@ -349,7 +349,7 @@ a070ceab4c8514654fadff71e219ab5e
                 (\ (ds :: GameState.GameState) ->
                  case ds of wild { GameState.Game ds1 ds2 ds3 ds4 ds5 ds6 ->
                  ds1 }) -}
-1164b0766c2ec95b6661ef60eedf521b
+c3ad132db64c3b403b1d7aaf8cdd213e
   tilesToBeAdded :: GameState.GameState -> GHC.Types.Int
   RecSel Left GameState.GameState
   {- Arity: 1, HasNoCafRefs,
