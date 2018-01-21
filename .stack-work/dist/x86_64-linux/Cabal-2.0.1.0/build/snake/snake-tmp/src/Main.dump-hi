@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-21 00:44:25.814559 UTC
+2018-01-21 17:08:37.278715 UTC
 
 interface main:Main 8022
-  interface hash: fb4cc9098539781ee5fd904d324322c7
-  ABI hash: d7d6e7eec41ee07f120f55c0ebfbe901
+  interface hash: bcacdf406da438571ce78d85a6c058fb
+  ABI hash: 2d8d2eb6faca7f4ffb267de10029693a
   export-list hash: 0c6dd57704519eb66bc2e35415b75158
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8ba87647430bd4dec4a8dfcbbc06ed1d
@@ -62,9 +62,9 @@ import  -/  GameState 8c8acccd5704b9a1a01c50dc08d44098
 import  -/  Renderer 8b8f814c09ca326af91212a293485483
   exports: 452922872f3a13bbac282b4292139586
   render 54ac3aec5ffdfba9773081c33928fcc2
-import  -/  UpdateGame 1049c4b349a696810d542e05a686a2b7
+import  -/  UpdateGame ee4c5c1620381103ce4d661f362e7ea1
   exports: ee87f42c4e9a95da6e7af1eff1fca0ce
-  update e66e7dc793917358f4f8225879fec1fd
+  update b52d3d31b303c10ce3337863f71a0fda
 9d72b2fddb818bcd8919052935e0f1f3
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -83,7 +83,7 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-8299966384414bff9a10f2c78d741e6f
+da31c465f83228341f343dc2682042dc
   $wplaySnake ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -116,12 +116,12 @@ d026be77cb9ced20e35a61514e0458aa
                         GHC.Types.True
                         w of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, GHC.Tuple.() #) }) -}
-a816f3e12726e3d18408640611ff21f5
+56ffc267841387348efcd8e38a996691
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-253051c27e379dae6f1a9db79a5e0444
+cfa5227262f216619036244925b4b830
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -154,7 +154,7 @@ a816f3e12726e3d18408640611ff21f5
                         GHC.Types.True
                         s of ds1 { (#,#) ipv ipv1 ->
                  (# ipv, GHC.Tuple.() #) }) -}
-0a2621e67f74a726d2c4d242258419de
+ed5a402f39c791731c40a40a9572318e
   main2 ::
     GHC.Types.Float
     -> GameState.GameState
@@ -192,10 +192,10 @@ a816f3e12726e3d18408640611ff21f5
                 (\ (x :: GameState.GameState)
                    (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  (# s1, Renderer.render x #)) -}
-50b1964bafe6c8ed01a9fae2fc2db8aa
+c6bfc36f73393b8b7a1d258224e72877
   main5 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32#) -}
-7ea59100cbb18dc03280ff13143918bb
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+f177cb356449c780ebe46402016712a1
   main6 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -203,7 +203,7 @@ a816f3e12726e3d18408640611ff21f5
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-438f32d3ad7b65882dcc2a91a739339e
+035e5e9f66d2b75851e54a4077223368
   playSnake :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.IO ()
   {- Arity: 3, Strictness: <L,A><L,A><S,U>,
      Unfolding: InlineRule (0, True, True)
@@ -212,7 +212,7 @@ a816f3e12726e3d18408640611ff21f5
                 (<GHC.Types.Int>_R
                  ->_R <GHC.Types.Int>_R
                  ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-8ff381e17425f0e24dd6adc1953cb37b
+7aaa6dd51d91031f9160da2277c83213
   playSnake1 ::
     GHC.Types.Int
     -> GHC.Types.Int

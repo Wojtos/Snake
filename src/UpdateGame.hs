@@ -11,13 +11,13 @@ moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
                 | tilesToBeAdded state > 0 = ((xToAdd + xOld, yToAdd + yOld):(snakeBody state), tilesToBeAdded state - 1)
                 | otherwise = ((xToAdd + xOld, yToAdd + yOld):(init $ snakeBody state), tilesToBeAdded state)
   where
-  	xToAdd =  fst $ orientationToPosition (orientation state)
-  	yToAdd =  snd $ orientationToPosition (orientation state)
+  	xToAdd = fst $ orientationToPosition (orientation state)
+  	yToAdd = snd $ orientationToPosition (orientation state)
   	xOld = fst $ head $ snakeBody state 
   	yOld = snd $ head $ snakeBody state 
 
-ateApple :: Int -> [Position] -> Position
-ateApple sizeOfBoard newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `mod` length freeBoard)
+ateApple :: [Position] -> Position
+ateApple newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `mod` length freeBoard)
   where
   board = [(x,y) | x <- [(-(sizeOfBoard-3) `div` 2)..((sizeOfBoard-3) `div` 2)], y <- [(-(sizeOfBoard-3) `div` 2)..((sizeOfBoard-3) `div` 2)]]
   freeBoard =  board \\ newSnakeBody
@@ -27,6 +27,7 @@ ateApple sizeOfBoard newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + 
   p4 = sizeOfBoard + snd (head newSnakeBody)
 
 hasCollisionOccured :: [Position] -> Bool
+hasCollisionOccured [] = False
 hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSnake <= -sizeOfHalfOfBoard) || 
                             (snd headOfSnake >= sizeOfHalfOfBoard || snd headOfSnake <= -sizeOfHalfOfBoard) ||
                             (any (==headOfSnake) $ tail body)
@@ -38,7 +39,7 @@ update :: (Float -> GameState -> GameState) -- ^ step
 update _ state = Game {
 	snakeBody = newSnakeBody,
 	applePos = if isAppleEaten 
-		then ateApple sizeOfBoard newSnakeBody 
+		then ateApple newSnakeBody 
 		else applePos state, 
 	orientation = orientation state,
 	tilesToBeAdded = if isAppleEaten 

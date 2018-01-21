@@ -31,7 +31,7 @@ data GameState = Game -- ^ data about state of the game
 
 initialGameState :: GameState -- ^ GameState at the begining of the game
 initialGameState = Game {
-	snakeBody = [(0, 0)],
+    snakeBody = [(0, 0)],
 	applePos = (1, 0),
 	orientation = GameState.Left,
 	tilesToBeAdded = 3,
