@@ -7,12 +7,12 @@ import Renderer
 import EventSystem
 import GameSettings
 
--- | Starting a game
+-- | Entry point of the program
 main :: IO ()
 main = play 
  (InWindow "Snake" (sizeOfScreen, sizeOfScreen) (100, 100)) 
  bgColor 
- 16 
+ fps
  initialGameState 
  render 
  handleKeys 

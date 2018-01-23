@@ -5,7 +5,7 @@ import GameState
 import GameSettings
 import Data.List
 
--- | Simulate moving of snake, returns snakeBody and tilesToBeAdded after motion 
+-- | Simulate movement of the snake, returns snakeBody and tilesToBeAdded after each iteration
 moveSnake :: GameState -> ([Position], Int)
 moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
                 | tilesToBeAdded state > 0 = ((xToAdd + xOld, yToAdd + yOld):(snakeBody state), tilesToBeAdded state - 1)
@@ -16,7 +16,7 @@ moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
   	xOld = fst $ head $ snakeBody state 
   	yOld = snd $ head $ snakeBody state 
 
--- | Function is invoked after eating a apple, returns newApplePos
+-- | Is invoked after eating an apple, generates newApplePos
 ateApple :: [Position] -> Position
 ateApple newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `mod` length freeBoard)
   where
@@ -27,7 +27,7 @@ ateApple newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `m
   p3 = sizeOfBoard + fst (head newSnakeBody)
   p4 = sizeOfBoard + snd (head newSnakeBody)
 
--- | If returns true, game is finnished
+-- | Checks for collisions after each iteration
 hasCollisionOccured :: [Position] -> Bool
 hasCollisionOccured [] = False
 hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSnake <= -sizeOfHalfOfBoard) || 
@@ -36,7 +36,7 @@ hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSn
                             where
                             	headOfSnake = head body
                             	sizeOfHalfOfBoard = sizeOfBoard `div` 2
--- | Function is a single step between one state to another
+-- | Generates new GamesState depending on current one, performed once for each frame of the program 
 update :: (Float -> GameState -> GameState)
 update _ state = Game {
 	snakeBody = newSnakeBody,

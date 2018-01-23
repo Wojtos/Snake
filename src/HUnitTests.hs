@@ -5,7 +5,7 @@ import GameSettings
 import UpdateGame
 import GameState
 
-test1 = TestCase (assertEqual "regular move" (update (1.0 / fps) state1) state1')
+test1 = TestCase (assertEqual "regular move" (update (1.0 / fromIntegral fps) state1) state1')
  where 
   state1 = Game {
    snakeBody = [(0,0),(0,1),(1,1)],
@@ -23,7 +23,7 @@ test1 = TestCase (assertEqual "regular move" (update (1.0 / fps) state1) state1'
    isEnded = False,
    changeOfOrientation = False 
   }
-test2 = TestCase (assertEqual "wall collision" (isEnded (update (1.0 / fps) state2)) True)
+test2 = TestCase (assertEqual "wall collision" (isEnded (update (1.0 / fromIntegral fps) state2)) True)
  where 
   state2 = Game {
    snakeBody = [((quot sizeOfBoard 2) - 1,0)],
@@ -33,7 +33,7 @@ test2 = TestCase (assertEqual "wall collision" (isEnded (update (1.0 / fps) stat
    isEnded = False,
    changeOfOrientation = False
   }
-test3 = TestCase (assertEqual "ate apple" (tilesToBeAdded (update (1.0 / fps) state3)) rewardForEatingApple)
+test3 = TestCase (assertEqual "ate apple" (tilesToBeAdded (update (1.0 / fromIntegral fps) state3)) rewardForEatingApple)
  where 
   state3 = Game {
    snakeBody = [(0,0),(0,1),(1,1)],
@@ -43,7 +43,7 @@ test3 = TestCase (assertEqual "ate apple" (tilesToBeAdded (update (1.0 / fps) st
    isEnded = False,
    changeOfOrientation = False
   }
-test4 = TestCase (assertEqual "move while growing" (update (1.0 / fps) state4) state4')
+test4 = TestCase (assertEqual "move while growing" (update (1.0 / fromIntegral fps) state4) state4')
  where 
   state4 = Game {
    snakeBody = [(0,0),(0,1),(1,1)],
@@ -61,7 +61,7 @@ test4 = TestCase (assertEqual "move while growing" (update (1.0 / fps) state4) s
    isEnded = False,
    changeOfOrientation = False
   }
-test5 = TestCase (assertEqual "collision with body"  (isEnded $ update (1.0 / fps) state5) True)
+test5 = TestCase (assertEqual "collision with body"  (isEnded $ update (1.0 / fromIntegral fps) state5) True)
  where 
   state5 = Game {
    snakeBody = [(0,0),(0,1),(1,1),(1,0),(1,(-1))],
@@ -72,4 +72,11 @@ test5 = TestCase (assertEqual "collision with body"  (isEnded $ update (1.0 / fp
    changeOfOrientation = False
   }
 
-testUpdate = TestList [ TestLabel "test1" test1, TestLabel "test2" test2, TestLabel "test3" test3, TestLabel "test4" test4, TestLabel "test5" test5]
+testUpdate = TestList [ 
+ TestLabel "regular move" test1,
+ TestLabel "wall collision" test2,
+ TestLabel "ate apple" test3,
+ TestLabel "move while growing" test4,
+ TestLabel "collision with body" test5
+ ]
+ 
