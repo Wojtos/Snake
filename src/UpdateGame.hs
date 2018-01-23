@@ -1,11 +1,11 @@
 module UpdateGame where
 
 import Graphics.Gloss
-import Graphics.Gloss.Data.ViewPort
 import GameState 
 import GameSettings
 import Data.List
 
+-- | Simulate moving of snake, returns snakeBody and tilesToBeAdded after motion 
 moveSnake :: GameState -> ([Position], Int)
 moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
                 | tilesToBeAdded state > 0 = ((xToAdd + xOld, yToAdd + yOld):(snakeBody state), tilesToBeAdded state - 1)
@@ -16,6 +16,7 @@ moveSnake state | isEnded state = (snakeBody state, tilesToBeAdded state)
   	xOld = fst $ head $ snakeBody state 
   	yOld = snd $ head $ snakeBody state 
 
+-- | Function is invoked after eating a apple, returns newApplePos
 ateApple :: [Position] -> Position
 ateApple newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `mod` length freeBoard)
   where
@@ -26,6 +27,7 @@ ateApple newSnakeBody = freeBoard !! ((5*p1 + (5^2)*p2 + (5^3)*p3 + (5^4)*p4) `m
   p3 = sizeOfBoard + fst (head newSnakeBody)
   p4 = sizeOfBoard + snd (head newSnakeBody)
 
+-- | If returns true, game is finnished
 hasCollisionOccured :: [Position] -> Bool
 hasCollisionOccured [] = False
 hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSnake <= -sizeOfHalfOfBoard) || 
@@ -34,8 +36,8 @@ hasCollisionOccured body = (fst headOfSnake >= sizeOfHalfOfBoard || fst headOfSn
                             where
                             	headOfSnake = head body
                             	sizeOfHalfOfBoard = sizeOfBoard `div` 2
-
-update :: (Float -> GameState -> GameState) -- ^ step
+-- | Function is a single step between one state to another
+update :: (Float -> GameState -> GameState)
 update _ state = Game {
 	snakeBody = newSnakeBody,
 	applePos = if isAppleEaten 

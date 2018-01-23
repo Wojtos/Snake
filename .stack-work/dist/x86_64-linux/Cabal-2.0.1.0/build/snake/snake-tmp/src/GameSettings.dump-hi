@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-21 15:27:58.655124 UTC
+2018-01-23 15:35:26.462355 UTC
 
 interface main:GameSettings 8022
-  interface hash: 41473f39dbc318ef9b7a50721313f10f
-  ABI hash: 97c2907765be7873f81a15daf4a1311f
-  export-list hash: 9e7c4cfb78ea15b7dd5ff3194c2d8876
+  interface hash: a287da8fc0d1c13489e0af9442399f99
+  ABI hash: 1a582e79e4b2c7bf52d188043ef7f7ba
+  export-list hash: 044aa57492f2bc97370b52b50dbe2e24
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
@@ -14,6 +14,8 @@ interface main:GameSettings 8022
 exports:
   GameSettings.appleColor
   GameSettings.bgColor
+  GameSettings.fps
+  GameSettings.gridColor
   GameSettings.rewardForEatingApple
   GameSettings.sizeOfBoard
   GameSettings.sizeOfScreen
@@ -87,15 +89,23 @@ f37904eb9512de218984f1b8cf49eb29
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Graphics.Gloss.Data.Color.black -}
+2b90475ec1ef9475d31b9a1ad8acaea9
+  fps :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 16.0#) -}
+0f22b0192a15fe655e9fd8a1db412f01
+  gridColor :: Graphics.Gloss.Internals.Data.Color.Color
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Graphics.Gloss.Data.Color.black -}
 303c8dbac0757e0047281654107b75b5
   rewardForEatingApple :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
-821fd2952cb158c53fd36647f3719996
+226003c757492ad6a0b43becfdf5b605
   sizeOfBoard :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 17#) -}
-391667a5b5b03c3338aeed148296ef24
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32#) -}
+dfddec00eac64aa71bc12f6f1a2b0674
   sizeOfScreen :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 272#) -}
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 512#) -}
 73dfbe4eb744b0fcbc9df0736581bcef
   sizeOfTile :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 16#) -}
