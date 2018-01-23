@@ -17,5 +17,5 @@ executable snake
   hs-source-dirs:      src
   main-is:             Main.hs
   default-language:    Haskell2010
-  other-modules:       EventSystem, GameSettings, GameState, Renderer, UpdateGame, QuickCheck
+  other-modules:       EventSystem, GameSettings, GameState, Renderer, UpdateGame, QuickCheck, HUnitTests
   build-depends:       base >= 4.7 && < 5, gloss, QuickCheck, HUnit
