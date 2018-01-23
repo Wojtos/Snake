@@ -8,9 +8,9 @@ import Renderer
 import EventSystem
 import GameSettings
 
-playSnake :: Int -> Int -> IO ()
-playSnake sizeOfScreen sizeOfTile = play FullScreen bgColor 4 initialGameState render handleKeys update 
+playSnake :: IO ()
+playSnake = play (InWindow "Snake" (sizeOfScreen, sizeOfScreen) (100, 100)) bgColor 32 initialGameState render handleKeys update 
 
 
 main :: IO ()
-main = playSnake 272 16
+main = playSnake
