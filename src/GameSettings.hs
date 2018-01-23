@@ -2,6 +2,9 @@ module GameSettings where
 
 import Graphics.Gloss
 
+fps :: Float
+fps = 16
+
 sizeOfTile :: Int 
 sizeOfTile = 16
 

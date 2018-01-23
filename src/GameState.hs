@@ -6,7 +6,7 @@ data Orientation = Up |
                    Right |
                    Down |
                    Left
-                   deriving Eq
+				   deriving (Eq, Show)
 
 orientationToInt :: Orientation -> Int
 orientationToInt x | x == GameState.Up = 0
@@ -20,21 +20,21 @@ orientationToPosition x | x == GameState.Up = (0,1)
                         | x == GameState.Down = (0,-1)
                         | x == GameState.Left = (-1,0)
 
-data GameState = Game -- ^ data about state of the game
- { snakeBody :: [Position]
- , applePos :: Position 
- , orientation :: Orientation
- , tilesToBeAdded :: Int
- , isEnded :: Bool
- , changeOfOrientation :: Bool
- }
+data GameState = Game { -- ^ data about state of the game
+ snakeBody :: [Position],
+ applePos :: Position,
+ orientation :: Orientation,
+ tilesToBeAdded :: Int,
+ isEnded :: Bool,
+ changeOfOrientation :: Bool
+} deriving (Eq, Show)
 
 initialGameState :: GameState -- ^ GameState at the begining of the game
 initialGameState = Game {
-    snakeBody = [(0, 0)],
-	applePos = (1, 0),
-	orientation = GameState.Left,
-	tilesToBeAdded = 3,
-	isEnded = False,
-	changeOfOrientation = False
-}  
+ snakeBody = [(0, 0)],
+ applePos = (1, 0),
+ orientation = GameState.Left,
+ tilesToBeAdded = 3,
+ isEnded = False,
+ changeOfOrientation = False
+} 
