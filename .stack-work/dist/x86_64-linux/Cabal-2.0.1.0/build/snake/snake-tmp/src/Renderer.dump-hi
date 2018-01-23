@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 15:35:26.852788 UTC
+2018-01-23 20:31:39.30448 UTC
 
 interface main:Renderer 8022
-  interface hash: ab6f5e6e427a8d0ff04dd705525ad2f7
-  ABI hash: 4f5c70225173c0557c60600ac8c76de4
+  interface hash: 6bb025c882f47e1446c72501a82cd7c6
+  ABI hash: 0b6a24d7b623c171a1675d985eeb1854
   export-list hash: 439db67e603eda9c39b5b49fb158618a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -55,11 +55,11 @@ import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Color ad515478ea5e275b408a466a82d
 import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Picture bd23f879edf35d61a970a4674d345577
 import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Color 67e41f501ac28fdfb0b383296bc15e4c
 import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture 44e3080be4942669c6c3efda5283b96a
-import  -/  GameSettings 1a582e79e4b2c7bf52d188043ef7f7ba
+import  -/  GameSettings 61d2a1e958f0b59a2cf36e3ede7af58a
   exports: 044aa57492f2bc97370b52b50dbe2e24
-  appleColor f37904eb9512de218984f1b8cf49eb29
+  appleColor f4bf5b25af02fd475f8200b9a8d147db
   gridColor 0f22b0192a15fe655e9fd8a1db412f01
-  sizeOfBoard 226003c757492ad6a0b43becfdf5b605
+  sizeOfBoard a8d802b621aed8ed3c285b99f12cd26a
   sizeOfTile 73dfbe4eb744b0fcbc9df0736581bcef
   snakeColor 3a56c2dc26761e582a7a308a04c2eef0
   wallColor 5df5228648b31a2c48c7a78eec146a99
@@ -89,7 +89,7 @@ e29bdf84f3996480183357d54b57cbe7
 7c072f779f4bf5efbfe0294e3e0a4719
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-d3ab4658e64a96e684a73f65db0d7850
+2dddbe352c0b3c9383eead16cad1e3b5
   $wrender ::
     GameState.GameState
     -> (# [Graphics.Gloss.Internals.Data.Picture.Picture] #)
@@ -109,14 +109,14 @@ d3ab4658e64a96e684a73f65db0d7850
                                    GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.*# x1 16#)) })
                                   (case y of wild2 { GHC.Types.I# x1 ->
                                    GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.*# x1 16#)) })
-                                  Renderer.render5 }
+                                  Renderer.render9 }
                             } in
                             let {
                               z3 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
                               = GHC.Types.:
                                   @ Graphics.Gloss.Internals.Data.Picture.Picture
                                   z2
-                                  Renderer.render3
+                                  Renderer.render7
                             } in
                             letrec {
                               go :: [(GHC.Types.Int, GHC.Types.Int)]
@@ -143,10 +143,10 @@ d3ab4658e64a96e684a73f65db0d7850
                               : y ys
                               -> GHC.Types.:
                                    @ Graphics.Gloss.Internals.Data.Picture.Picture
-                                   (Renderer.posToTile Renderer.render2 y)
+                                   (Renderer.posToTile Renderer.render6 y)
                                    (go ys) }
                         } in
-                        go Renderer.generateGrid1
+                        go Renderer.render4
                     } in
                     letrec {
                       go :: [(GHC.Types.Int, GHC.Types.Int)]
@@ -158,24 +158,66 @@ d3ab4658e64a96e684a73f65db0d7850
                           : y ys
                           -> GHC.Types.:
                                @ Graphics.Gloss.Internals.Data.Picture.Picture
-                               (Renderer.posToTile Renderer.render1 y)
+                               (case y of wild1 { (,) x y1 ->
+                                Graphics.Gloss.Internals.Data.Picture.Translate
+                                  (case x of wild2 { GHC.Types.I# x1 ->
+                                   GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.*# x1 16#)) })
+                                  (case y1 of wild2 { GHC.Types.I# x1 ->
+                                   GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.*# x1 16#)) })
+                                  Renderer.render3 })
                                (go ys) }
                     } in
-                    go Renderer.generateGrid1 #)) -}
-f520d6d15860a92255dc667c98417cfe
+                    go Renderer.render1 #)) -}
+04eabdbba7c9eb25b67992ba72aff5fc
   generateGrid :: GHC.Types.Int -> [GameState.Position]
-  {- Arity: 1, Strictness: <L,A>,
-     Unfolding: InlineRule (1, True, True)
-                (\ (x :: GHC.Types.Int) -> Renderer.generateGrid1) -}
-6ec5c0f7f65772b682c0ba463a01bbe7
-  generateGrid1 :: [GameState.Position]
-  {- Unfolding: (Renderer.generateGrid_go -16#) -}
-2a2e109ca10e921f17660da7b5cd1183
-  generateGrid_go :: GHC.Prim.Int# -> [GameState.Position]
-  {- Arity: 1, Strictness: <L,U> -}
-ff684a21020dcd86a6495a2140e597de
+  {- Arity: 1, Strictness: <L,1*U(U)>,
+     Unfolding: (\ (set :: GHC.Types.Int) ->
+                 let {
+                   lvl :: GHC.Types.Int
+                   = case set of wild1 { GHC.Types.I# x ->
+                     GHC.Types.I# (GHC.Prim.andI# x 1#) }
+                 } in
+                 letrec {
+                   go :: [GHC.Types.Int] -> [GameState.Position]
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ (ds :: [GHC.Types.Int]) ->
+                     case ds of wild {
+                       [] -> GHC.Types.[] @ GameState.Position
+                       : y ys
+                       -> let {
+                            z :: [GameState.Position] = go ys
+                          } in
+                          letrec {
+                            go1 :: [GHC.Types.Int] -> [GameState.Position]
+                              {- Arity: 1, Strictness: <S,1*U> -}
+                            = \ (ds1 :: [GHC.Types.Int]) ->
+                              case ds1 of wild1 {
+                                [] -> z
+                                : y1 ys1
+                                -> case y of wild2 { GHC.Types.I# x ->
+                                   case y1 of wild3 { GHC.Types.I# y2 ->
+                                   case lvl of wild4 { GHC.Types.I# y3 ->
+                                   case GHC.Prim.tagToEnum#
+                                          @ GHC.Types.Bool
+                                          (GHC.Prim.==#
+                                             (GHC.Prim.andI# (GHC.Prim.+# x y2) 1#)
+                                             y3) of wild5 {
+                                     GHC.Types.False -> go1 ys1
+                                     GHC.Types.True
+                                     -> GHC.Types.:
+                                          @ GameState.Position
+                                          (wild2, wild3)
+                                          (go1 ys1) } } } } }
+                          } in
+                          go1 Renderer.generateGrid1 }
+                 } in
+                 go Renderer.generateGrid1) -}
+b33230b4eb530d34b32c9e7af9ae9cec
+  generateGrid1 :: [GHC.Types.Int]
+  {- Unfolding: (GHC.Enum.eftInt -12# 12#) -}
+32fb957146f50239214659209eba86be
   generateWalls :: [GameState.Position]
-  {- Unfolding: (Renderer.generateWalls_go -16#) -}
+  {- Unfolding: (Renderer.generateWalls_go -12#) -}
 16565c541c798d5ed12b948138e7836b
   generateWalls_go :: GHC.Prim.Int# -> [GameState.Position]
   {- Arity: 1, Strictness: <L,U> -}
@@ -214,7 +256,7 @@ fb19e55bc1f08a2ffba2506d8b3b9db3
 4074f51aa3999171f1e5738a484c7953
   posToTile3 :: GHC.Types.Float
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 16.0#) -}
-165b5109ba4e50807d4adf5639a0735a
+a49d172e7bc821960f0c2a8b7bc9c513
   render ::
     GameState.GameState
     -> Graphics.Gloss.Internals.Data.Picture.Picture
@@ -225,41 +267,65 @@ fb19e55bc1f08a2ffba2506d8b3b9db3
                 (\ (w :: GameState.GameState) ->
                  case Renderer.$wrender w of ww { Unit# ww1 ->
                  Graphics.Gloss.Internals.Data.Picture.Pictures ww1 }) -}
-e977ea79155ba17075e08f0ef01fd3da
-  render1 :: Graphics.Gloss.Internals.Data.Color.Color
+9255b85e26c8d1e49a9ad017b78b446b
+  render1 :: [GameState.Position]
+  {- Unfolding: (Renderer.generateGrid Renderer.render2) -}
+80e1aea5571f34e068ce6a1f1c55c58f
+  render2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+468a09aac1d095c15fb1a183b5db906c
+  render3 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.black
+                   Renderer.posToTile1) -}
+11cec084db16fc489d08691382a33564
+  render4 :: [GameState.Position]
+  {- Unfolding: (Renderer.generateGrid Renderer.render5) -}
+6fe59491ec4a00f71b4957fce00d36e6
+  render5 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+4fec0e6782d5f6bf93558fcc7fd74ee4
+  render6 :: Graphics.Gloss.Internals.Data.Color.Color
   {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
-                        (GHC.Prim.sqrtFloat# 9.90099e-3#)
-                        (GHC.Prim.sqrtFloat# 9.90099e-3#)
-                        (GHC.Prim.sqrtFloat# 9.90099e-3#)
-                        1.0# of ww14 { (#,,,#) ww15 ww16 ww17 ww18 ->
-                 Graphics.Gloss.Internals.Data.Color.RGBA ww15 ww16 ww17 ww18 }) -}
-6df468b243b40b1a401b2166af6dc9c4
-  render2 :: Graphics.Gloss.Internals.Data.Color.Color
-  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
-                        (GHC.Prim.sqrtFloat# 4.9751243e-3#)
-                        (GHC.Prim.sqrtFloat# 4.9751243e-3#)
-                        (GHC.Prim.sqrtFloat# 4.9751243e-3#)
-                        1.0# of ww14 { (#,,,#) ww15 ww16 ww17 ww18 ->
-                 Graphics.Gloss.Internals.Data.Color.RGBA ww15 ww16 ww17 ww18 }) -}
-aee760ccfb094c19e78cf848eae084ce
-  render3 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+                        -0.2#
+                        -0.2#
+                        -0.2#
+                        1.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
+                 case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        (GHC.Prim.sqrtFloat#
+                           (GHC.Prim.timesFloat# 6.542056e-2# (GHC.Prim.timesFloat# ww6 ww6)))
+                        (GHC.Prim.sqrtFloat#
+                           (GHC.Prim.timesFloat# 6.542056e-2# (GHC.Prim.timesFloat# ww7 ww7)))
+                        (GHC.Prim.sqrtFloat#
+                           (GHC.Prim.timesFloat# 6.542056e-2# (GHC.Prim.timesFloat# ww8 ww8)))
+                        (GHC.Prim.divideFloat#
+                           (GHC.Prim.plusFloat# 1.0# (GHC.Prim.timesFloat# 7.0e-2# ww9))
+                           1.07#) of ww14 { (#,,,#) ww15 ww16 ww17 ww18 ->
+                 Graphics.Gloss.Internals.Data.Color.RGBA
+                   ww15
+                   ww16
+                   ww17
+                   ww18 } }) -}
+74ee5a000a56fa5751c9b5cb06124b38
+  render7 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
   {- Unfolding: (GHC.Base.map
                    @ (GHC.Types.Int, GHC.Types.Int)
                    @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Renderer.render4
+                   Renderer.render8
                    Renderer.generateWalls) -}
-7cdf9027e219e3d566bdcf82004e086a
-  render4 ::
+6e3fa885c150717e9dafb1db8ecb2eda
+  render8 ::
     GameState.Position -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U(U))>m11,
      Unfolding: InlineRule (1, True, False)
                 (\ (x :: GameState.Position) ->
                  Renderer.posToTile GameSettings.wallColor x) -}
-d266626ae028d924adcf4803c66689c1
-  render5 :: Graphics.Gloss.Internals.Data.Picture.Picture
+6a126e3d5439227d6e8cf66f0e775885
+  render9 :: Graphics.Gloss.Internals.Data.Picture.Picture
   {- Strictness: m10,
      Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
-                   GameSettings.appleColor
+                   Graphics.Gloss.Data.Color.red
                    Renderer.posToTile1) -}
 vectorised variables:
 vectorised tycons:

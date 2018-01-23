@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 15:48:54.763128 UTC
+2018-01-23 20:31:39.510469 UTC
 
 interface main:UpdateGame 8022
-  interface hash: c1096b6cd6815aba26da62a2922b3881
-  ABI hash: abd58c087296ac45616f8ed18d4cb866
+  interface hash: 06ccddb6b6aadabd77186a43f8424ab1
+  ABI hash: 7293d57cf824e2462c69fb452e6b3b98
   export-list hash: ee87f42c4e9a95da6e7af1eff1fca0ce
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -56,10 +56,10 @@ import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
 import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
 import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
 import  -/  gloss-1.11.1.1:Graphics.Gloss 42927f6b8c3c9969ac9a5d586179f98b
-import  -/  GameSettings 1a582e79e4b2c7bf52d188043ef7f7ba
+import  -/  GameSettings 61d2a1e958f0b59a2cf36e3ede7af58a
   exports: 044aa57492f2bc97370b52b50dbe2e24
   rewardForEatingApple 303c8dbac0757e0047281654107b75b5
-  sizeOfBoard 226003c757492ad6a0b43becfdf5b605
+  sizeOfBoard a8d802b621aed8ed3c285b99f12cd26a
 import  -/  GameState 8acd50b608ce6b3d98f8794a54aa4079
   exports: c8cecce746904f3520e2c67cee428f1f
   Game 5e6ec80da91de64f4e07dd99ea67efb1
@@ -100,7 +100,7 @@ b5c0abf21d85bbaa41d4753075fd11f2
     -> GHC.Types.Bool
     -> (# [GameState.Position], GHC.Types.Int #)
   {- Arity: 4, Strictness: <L,U><L,U><L,U(U)><S,1*U>, Inline: [0] -}
-4fe3d226131fda817c2a0a2012c0ee70
+7ade83b3308db5bf2b3cc014ec599493
   $wupdate ::
     GameState.GameState
     -> (# [GameState.Position], GameState.Position,
@@ -159,7 +159,7 @@ b5c0abf21d85bbaa41d4753075fd11f2
                          case newTilesToBeAdded of wild2 { GHC.Types.I# x ->
                          GHC.Types.I# (GHC.Prim.+# x 3#) } } },
                     UpdateGame.hasCollisionOccured newSnakeBody, GHC.Types.False #)) -}
-e0821edf66093f2b2bf01cd41e3f5c4d
+9eb923292b23b34033894c63893dccc4
   ateApple :: [GameState.Position] -> GameState.Position
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: (\ (newSnakeBody :: [GameState.Position]) ->
@@ -203,10 +203,10 @@ e0821edf66093f2b2bf01cd41e3f5c4d
                                                     (GHC.Prim.+#
                                                        (GHC.Prim.+#
                                                           (GHC.Prim.+#
-                                                             (GHC.Prim.*# 5# (GHC.Prim.+# 32# y))
-                                                             (GHC.Prim.*# 25# (GHC.Prim.+# 32# y2)))
-                                                          (GHC.Prim.*# 125# (GHC.Prim.+# 32# y3)))
-                                                       (GHC.Prim.*# 625# (GHC.Prim.+# 32# y4)))
+                                                             (GHC.Prim.*# 5# (GHC.Prim.+# 24# y))
+                                                             (GHC.Prim.*# 25# (GHC.Prim.+# 24# y2)))
+                                                          (GHC.Prim.*# 125# (GHC.Prim.+# 24# y3)))
+                                                       (GHC.Prim.*# 625# (GHC.Prim.+# 24# y4)))
                                                     ww2 of ww1 { DEFAULT ->
                                              GHC.List.$w!!
                                                @ (GHC.Types.Int, GHC.Types.Int)
@@ -223,9 +223,9 @@ e0821edf66093f2b2bf01cd41e3f5c4d
                    -> case GHC.Real.divZeroError
                       ret_ty (GHC.Types.Int, GHC.Types.Int)
                       of {} }) -}
-acfb9b0e2f9a6db17134108925c85801
+cec453035df3963a58e26c6202243be9
   ateApple1 :: [(GHC.Types.Int, GHC.Types.Int)]
-  {- Unfolding: (UpdateGame.ateApple_go -14#) -}
+  {- Unfolding: (UpdateGame.ateApple_go -10#) -}
 90736ae559fadca7948a46686921450c
   ateApple_go :: GHC.Prim.Int# -> [(GHC.Types.Int, GHC.Types.Int)]
   {- Arity: 1, Strictness: <L,U> -}
@@ -235,7 +235,7 @@ acfb9b0e2f9a6db17134108925c85801
     -> [(GHC.Types.Int, GHC.Types.Int)]
     -> [(GHC.Types.Int, GHC.Types.Int)]
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
-10d20ec220b494acc15315dd768d2fcb
+0dfdeccb0731e5a75bb5e6e548bb4820
   hasCollisionOccured :: [GameState.Position] -> GHC.Types.Bool
   {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
      Unfolding: (\ (ds :: [GameState.Position]) ->
@@ -246,20 +246,20 @@ acfb9b0e2f9a6db17134108925c85801
                       case x of wild2 { GHC.Types.I# x1 ->
                       case GHC.Prim.tagToEnum#
                              @ GHC.Types.Bool
-                             (GHC.Prim.>=# x1 16#) of wild3 {
+                             (GHC.Prim.>=# x1 12#) of wild3 {
                         GHC.Types.False
                         -> case GHC.Prim.tagToEnum#
                                   @ GHC.Types.Bool
-                                  (GHC.Prim.<=# x1 -16#) of wild4 {
+                                  (GHC.Prim.<=# x1 -12#) of wild4 {
                              GHC.Types.False
                              -> case ds1 of wild5 { GHC.Types.I# x2 ->
                                 case GHC.Prim.tagToEnum#
                                        @ GHC.Types.Bool
-                                       (GHC.Prim.>=# x2 16#) of wild6 {
+                                       (GHC.Prim.>=# x2 12#) of wild6 {
                                   GHC.Types.False
                                   -> case GHC.Prim.tagToEnum#
                                             @ GHC.Types.Bool
-                                            (GHC.Prim.<=# x2 -16#) of wild7 {
+                                            (GHC.Prim.<=# x2 -12#) of wild7 {
                                        GHC.Types.False
                                        -> letrec {
                                             go :: [GameState.Position] -> GHC.Types.Bool
@@ -302,7 +302,7 @@ acfb9b0e2f9a6db17134108925c85801
                         ww4
                         ww5 of ww7 { (#,#) ww8 ww9 ->
                  (ww8, ww9) } }) -}
-9757164ee36cdddf2721ed4758312d0f
+2cc8b84e9c0815e5bb3d72b078beaeb6
   update ::
     GHC.Types.Float -> GameState.GameState -> GameState.GameState
   {- Arity: 2, Strictness: <L,A><L,U(U,U(U(U),U(U)),U,U(U),U,A)>m,

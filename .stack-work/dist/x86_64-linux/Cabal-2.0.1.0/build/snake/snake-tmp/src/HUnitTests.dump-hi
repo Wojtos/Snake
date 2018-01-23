@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 14:38:09.679231 UTC
+2018-01-23 20:31:39.903879 UTC
 
 interface main:HUnitTests 8022
-  interface hash: 0503e1f0e48fe1872e9e71d9d2a01d15
-  ABI hash: 443ae1791eb158b15284fbf50987b1a6
+  interface hash: 9af57015ec041ccb541ee73298be9166
+  ABI hash: 5037023bf7948d8668a82bc576d37add
   export-list hash: 68706197eb7fc0ccbb4defe5dc8d8037
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -53,11 +53,11 @@ import  -/  HUnit-1.6.0.0:Test.HUnit.Lang 20dd0c0d81dbf5e2ac6dd8fba57b0de2
 import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
 import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
 import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
-import  -/  GameSettings 1a582e79e4b2c7bf52d188043ef7f7ba
+import  -/  GameSettings 61d2a1e958f0b59a2cf36e3ede7af58a
   exports: 044aa57492f2bc97370b52b50dbe2e24
-  fps 2b90475ec1ef9475d31b9a1ad8acaea9
+  fps caa4fbad3dccbcf080ad5fe0bb6f6dd2
   rewardForEatingApple 303c8dbac0757e0047281654107b75b5
-  sizeOfBoard 226003c757492ad6a0b43becfdf5b605
+  sizeOfBoard a8d802b621aed8ed3c285b99f12cd26a
 import  -/  GameState 8acd50b608ce6b3d98f8794a54aa4079
   exports: c8cecce746904f3520e2c67cee428f1f
   Game 5e6ec80da91de64f4e07dd99ea67efb1
@@ -68,9 +68,9 @@ import  -/  GameState 8acd50b608ce6b3d98f8794a54aa4079
   orientation 1387295e6596f0d70fba3d2d2f446eff
   snakeBody 1387295e6596f0d70fba3d2d2f446eff
   tilesToBeAdded 1387295e6596f0d70fba3d2d2f446eff
-import  -/  UpdateGame abd58c087296ac45616f8ed18d4cb866
+import  -/  UpdateGame 7293d57cf824e2462c69fb452e6b3b98
   exports: ee87f42c4e9a95da6e7af1eff1fca0ce
-  update 9757164ee36cdddf2721ed4758312d0f
+  update 2cc8b84e9c0815e5bb3d72b078beaeb6
 d5f669afac3e60aa2450dc76653b7ff9
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -91,7 +91,7 @@ d5f669afac3e60aa2450dc76653b7ff9
 cb95deb3b8c60a9d3fd0b15c1aa7c942
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-c52f21e8caa53c9ce0191dadd2c1c999
+118cb4a725a4d5eb175e4de1b924bc07
   test1 :: Test.HUnit.Base.Test
   {- Strictness: m1,
      Unfolding: (Test.HUnit.Base.TestCase
@@ -99,7 +99,7 @@ c52f21e8caa53c9ce0191dadd2c1c999
 ecf34ebed6dced4c7c30a0cfe17818d3
   test10 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("regular move"#) -}
-fbf54b8bee3a03d1b07dd13680af4c1b
+ff414835b5ae56521e38507971f8aa79
   test11 :: GameState.GameState
   {- Unfolding: (case UpdateGame.$wupdate
                         HUnitTests.test12 of ww { (#,,,,,#) ww1 ww2 ww3 ww4 ww5 ww6 ->
@@ -159,7 +159,7 @@ f54fec0154ee0987f1bf77b706b6b52b
                    HUnitTests.test13
                    GHC.Types.False
                    GHC.Types.False) -}
-6046304c9433a9e4358634139d6bab35
+37ef11833ed04c0d485ddb33d04a75e0
   test2 :: Test.HUnit.Base.Test
   {- Strictness: m1,
      Unfolding: (Test.HUnit.Base.TestCase
@@ -200,7 +200,7 @@ db535fa0330150017b1677d211c86599
   test26 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((HUnitTests.test20, HUnitTests.test13)) -}
-e1559dd3097cc17b66654a0e3b064a7d
+9f305db95b0080b04e166ce0f2a61182
   test27 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -226,7 +226,7 @@ f3d27a97c3eb53ba255de55258e09907
 69b63154dbfe11250706a71a7712bb2b
   test29 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# HUnitTests.test30) -}
-2c741a440fd65704c4f3f59e5c83072b
+02f5815cdb929a153b59130496414b2b
   test3 :: Test.HUnit.Base.Test
   {- Strictness: m1,
      Unfolding: (Test.HUnit.Base.TestCase
@@ -234,7 +234,7 @@ f3d27a97c3eb53ba255de55258e09907
 c541e3537b2672e7b8ae092d5bef83d9
   test30 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("wall collision"#) -}
-0eb1289ff848c4acd5a33b16961469a5
+9e94bb168b4fe490c55d5a1073d97be0
   test31 :: GameState.GameState
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GameState.Game
@@ -244,21 +244,21 @@ c541e3537b2672e7b8ae092d5bef83d9
                    HUnitTests.test13
                    GHC.Types.False
                    GHC.Types.False) -}
-b4b0c3c6adbd283b4bff76f963b673a7
+06f6c909247aacf2880f80c6d7fa167b
   test32 :: [GameState.Position]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ GameState.Position
                    HUnitTests.test33
                    (GHC.Types.[] @ GameState.Position)) -}
-fca812adc88fcf5c25057a3e79a11128
+f04c552442de2acda2af0488d56f7e19
   test33 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((HUnitTests.test34, HUnitTests.test13)) -}
-787d71bbe6c48c27b266367ea5e17a54
+c011037ca8efe1a4d6b46ca152e56ffa
   test34 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 15#) -}
-dcedca1f20b15fefb764e0ae79f5da91
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+8e58132dbc9aef9c393599034c12456e
   test35 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -300,12 +300,12 @@ dcedca1f20b15fefb764e0ae79f5da91
                    HUnitTests.test13
                    GHC.Types.False
                    GHC.Types.False) -}
-cd69eb8ed8a69eb53a8ada08f70eeb7c
+e35ae07d161d089a92d81c42b9a9058c
   test4 :: Test.HUnit.Base.Test
   {- Strictness: m1,
      Unfolding: (Test.HUnit.Base.TestCase
                    HUnitTests.test40 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-b836811d32ddbade81248aacedeeef0f
+3ff54e6dd557129012d3a1bc08e296c1
   test40 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -338,7 +338,7 @@ ec7dab99227633919f2800fb02c64941
 775772060b83947b7ca962eeee1912ed
   test43 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("move while growing"#) -}
-7cba25aae00d91955a2d76d9a95a91b4
+17d9a3e95a83340a13d8467a2a94191e
   test44 :: GameState.GameState
   {- Unfolding: (case UpdateGame.$wupdate
                         HUnitTests.test45 of ww { (#,,,,,#) ww1 ww2 ww3 ww4 ww5 ww6 ->
@@ -363,7 +363,7 @@ ccbed4b9a8d8cd59be64a63b67e60d88
                    @ GameState.Position
                    HUnitTests.test26
                    HUnitTests.test16) -}
-a387bf9cecb72474143c71bfe43c684b
+0f7895ba6267beea5d5cd836af874aa0
   test48 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -396,7 +396,7 @@ a387bf9cecb72474143c71bfe43c684b
                    HUnitTests.test20
                    GHC.Types.False
                    GHC.Types.False) -}
-aa3d8dffbda56974dc9e31fd38cfbb06
+6dd8ddcfebaacebe4d8dafa3ad941313
   test5 :: Test.HUnit.Base.Test
   {- Strictness: m1,
      Unfolding: (Test.HUnit.Base.TestCase
@@ -456,7 +456,7 @@ a53e1e091cfe8bee5482cd836dced59f
   test58 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((HUnitTests.test20, HUnitTests.test15)) -}
-f856db6bd9190a34a673cfef8f049af6
+5b1a4bac9b70cab3c8d2efb176c87881
   test7 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -486,110 +486,75 @@ f856db6bd9190a34a673cfef8f049af6
 9f00f29ec0c3e392b77f839d007220e0
   test9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# HUnitTests.test10) -}
-6357a568fb93506560ba312c68cf2c4e
+2573e2c2f65478729ef14471bad206eb
   testUpdate :: Test.HUnit.Base.Test
   {- Strictness: m2,
      Unfolding: (Test.HUnit.Base.TestList HUnitTests.testUpdate1) -}
-e29b0fbc1351a066fa266fb8b55f77d8
+5625a76d050898abfbcb276362681353
   testUpdate1 :: [Test.HUnit.Base.Test]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Test.HUnit.Base.Test
-                   HUnitTests.testUpdate18
+                   HUnitTests.testUpdate10
                    HUnitTests.testUpdate2) -}
-681e2359f8aac16d7185e77b7218f244
-  testUpdate10 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HUnitTests.testUpdate11) -}
-6f3bacaef9838607e0d9e61140fe4f2c
-  testUpdate11 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("test4"#) -}
-f616f1f16f2167e4832ee3b83308cdfd
-  testUpdate12 :: Test.HUnit.Base.Test
+a516f95055e4e39c11e66c79c429f71e
+  testUpdate10 :: Test.HUnit.Base.Test
   {- Strictness: m3,
      Unfolding: (Test.HUnit.Base.TestLabel
-                   HUnitTests.testUpdate13
-                   HUnitTests.test3) -}
-1ab1f5b216c990ad9f77a6d5bd3dbcae
-  testUpdate13 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HUnitTests.testUpdate14) -}
-db8d3593720392216c39001fd04c8864
-  testUpdate14 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("test3"#) -}
-6f572c7d56855a2b3e73cd32e1fd67c5
-  testUpdate15 :: Test.HUnit.Base.Test
-  {- Strictness: m3,
-     Unfolding: (Test.HUnit.Base.TestLabel
-                   HUnitTests.testUpdate16
-                   HUnitTests.test2) -}
-430ec87414013e993f8e344f76f90c7e
-  testUpdate16 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HUnitTests.testUpdate17) -}
-f2ec0c8feb32dcc5d25cc3956fa97941
-  testUpdate17 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("test2"#) -}
-ad5ecde3ab620eea1d1b421a06767c80
-  testUpdate18 :: Test.HUnit.Base.Test
-  {- Strictness: m3,
-     Unfolding: (Test.HUnit.Base.TestLabel
-                   HUnitTests.testUpdate19
+                   HUnitTests.test9
                    HUnitTests.test1) -}
-ab0e2e1fb7330839e12e56c92b4e3d1c
-  testUpdate19 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HUnitTests.testUpdate20) -}
-d2deaf2f9c29bc6dc41a1d32cad3599c
+24999121492f748656fccb455b4f0e0b
   testUpdate2 :: [Test.HUnit.Base.Test]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Test.HUnit.Base.Test
-                   HUnitTests.testUpdate15
+                   HUnitTests.testUpdate9
                    HUnitTests.testUpdate3) -}
-bb4f9434cbbac16ee7ab40c5b3ea15a9
-  testUpdate20 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("test1"#) -}
-2afe955421f2fb5b2d61908856ec39eb
+0437d7cd92a94359f32a8d79208f9ecc
   testUpdate3 :: [Test.HUnit.Base.Test]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Test.HUnit.Base.Test
-                   HUnitTests.testUpdate12
+                   HUnitTests.testUpdate8
                    HUnitTests.testUpdate4) -}
-2f3175cf3f5dd992060d73b3fd679b17
+f183965d9670926181e6bf08e370b552
   testUpdate4 :: [Test.HUnit.Base.Test]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Test.HUnit.Base.Test
-                   HUnitTests.testUpdate9
+                   HUnitTests.testUpdate7
                    HUnitTests.testUpdate5) -}
-5617572f1f799054ddcade9bd5f380e7
+54dc945f182ffab3243977cad40a6b6b
   testUpdate5 :: [Test.HUnit.Base.Test]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Test.HUnit.Base.Test
                    HUnitTests.testUpdate6
                    (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
-0ea09ea5ca2484ddc2d4cb77724e2069
+f7907e29bdc029c75e767568d863d8f1
   testUpdate6 :: Test.HUnit.Base.Test
   {- Strictness: m3,
      Unfolding: (Test.HUnit.Base.TestLabel
-                   HUnitTests.testUpdate7
+                   HUnitTests.test50
                    HUnitTests.test5) -}
-2b9ce12ab7b400f3533054b7463cf887
-  testUpdate7 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HUnitTests.testUpdate8) -}
-f3e30427cbff3e41c63c65a0a8bef82c
-  testUpdate8 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("test5"#) -}
-e79ce0791f97daf1ad9ec2a6bd454c8e
+07991bb88d267fbbe9ade42623e3a6f3
+  testUpdate7 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   HUnitTests.test42
+                   HUnitTests.test4) -}
+d9ef188cb777ef71a3d0b204e3725c20
+  testUpdate8 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   HUnitTests.test37
+                   HUnitTests.test3) -}
+d43e976a637d966c4a1921bf1ffaf6c0
   testUpdate9 :: Test.HUnit.Base.Test
   {- Strictness: m3,
      Unfolding: (Test.HUnit.Base.TestLabel
-                   HUnitTests.testUpdate10
-                   HUnitTests.test4) -}
+                   HUnitTests.test29
+                   HUnitTests.test2) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

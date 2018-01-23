@@ -1,17 +1,18 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 14:38:07.750769 UTC
+2018-01-23 20:30:34.785205 UTC
 
 interface main:EventSystem 8022
-  interface hash: 790dcc70d01d77e49b363d5298ca7acb
-  ABI hash: 37847a00000f0a4a0ab7b32fff13cf03
-  export-list hash: ee58c842ddc0dfe8f17cb3aa7f43ea8e
+  interface hash: 13d5d9a9d25d13859817d0036d0d66ca
+  ABI hash: 052b031b9c18e6339d432b5fc28b466c
+  export-list hash: 3399d94de10429af1a32977839a17469
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  EventSystem.canChangeTo
   EventSystem.handleKeys
 module dependencies: GameState
 package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
@@ -54,6 +55,7 @@ import  -/  GameState 8acd50b608ce6b3d98f8794a54aa4079
   Down 4377854ddbe67d1e54162ad32a574fac
   GameState 1387295e6596f0d70fba3d2d2f446eff
   Left 1c84d1d8f4d686ff62f685959c4f34dd
+  Orientation 585e8e0523042e64f83842f1a051a378
   Right 67d7d59836ee3d0a3e33a6f25d911003
   Up c9f957651585ced0f8adf481f4b4b919
   changeOfOrientation 1387295e6596f0d70fba3d2d2f446eff
@@ -80,7 +82,117 @@ dd9643ecfdb0f5173742ebf35317576d
 7407e50ad74684ac246fcfec2e7fcaf8
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-46d3d887383c58f6e6019341309d46e0
+5c1f2bf0849f7c2e9929df82aa34de30
+  $wcanChangeTo ::
+    GameState.Orientation
+    -> GameState.Orientation -> GHC.Types.Bool -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><S,1*U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ (w :: GameState.Orientation)
+                   (ww :: GameState.Orientation)
+                   (ww1 :: GHC.Types.Bool) ->
+                 let {
+                   $j :: GHC.Prim.Int# -> GHC.Types.Bool
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (x :: GHC.Prim.Int#)[OneShot] ->
+                     case ww of wild {
+                       GameState.Up
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.>=# x 0#) of wild1 {
+                            GHC.Types.False
+                            -> case GHC.Prim.andI# (GHC.Prim.negateInt# x) 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } }
+                            GHC.Types.True
+                            -> case GHC.Prim.andI# x 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } } }
+                       GameState.Right
+                       -> let {
+                            x1 :: GHC.Prim.Int# = GHC.Prim.-# x 1#
+                          } in
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.>=# x1 0#) of wild1 {
+                            GHC.Types.False
+                            -> case GHC.Prim.andI# (GHC.Prim.negateInt# x1) 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } }
+                            GHC.Types.True
+                            -> case GHC.Prim.andI# x1 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } } }
+                       GameState.Down
+                       -> let {
+                            x1 :: GHC.Prim.Int# = GHC.Prim.-# x 2#
+                          } in
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.>=# x1 0#) of wild1 {
+                            GHC.Types.False
+                            -> case GHC.Prim.andI# (GHC.Prim.negateInt# x1) 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } }
+                            GHC.Types.True
+                            -> case GHC.Prim.andI# x1 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } } }
+                       GameState.Left
+                       -> let {
+                            x1 :: GHC.Prim.Int# = GHC.Prim.-# x 3#
+                          } in
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.>=# x1 0#) of wild1 {
+                            GHC.Types.False
+                            -> case GHC.Prim.andI# (GHC.Prim.negateInt# x1) 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } }
+                            GHC.Types.True
+                            -> case GHC.Prim.andI# x1 1# of wild2 {
+                                 DEFAULT -> GHC.Types.False
+                                 1#
+                                 -> case ww1 of wild3 {
+                                      GHC.Types.False -> GHC.Types.True
+                                      GHC.Types.True -> GHC.Types.False } } } }
+                 } in
+                 case w of wild {
+                   GameState.Up -> $j 0#
+                   GameState.Right -> $j 1#
+                   GameState.Down -> $j 2#
+                   GameState.Left -> $j 3# }) -}
+d8b6abc29e55262fb36ba089f3d7aa1c
+  canChangeTo ::
+    GameState.Orientation -> GameState.GameState -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U><S(LLSLLL),1*U(A,A,1*U,A,A,1*U)>, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GameState.Orientation) (w1 :: GameState.GameState) ->
+                 case w1 of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 EventSystem.$wcanChangeTo w ww3 ww6 }) -}
+19cb3b8c73bea0fbf21faac715573e97
   handleKeys ::
     Graphics.Gloss.Internals.Interface.Event.Event
     -> GameState.GameState -> GameState.GameState
@@ -89,115 +201,114 @@ dd9643ecfdb0f5173742ebf35317576d
                    (state :: GameState.GameState) ->
                  case ds of wild {
                    DEFAULT -> state
-                   Graphics.Gloss.Internals.Interface.Event.EventKey ds1 ds2 ds3 ds4
+                   Graphics.Gloss.Internals.Interface.Event.EventKey key ds1 ds2 ds3
                    -> case ds1 of wild1 {
-                        DEFAULT -> state
-                        Graphics.Gloss.Internals.Interface.Backend.Types.Char ds5
-                        -> case ds5 of wild2 { GHC.Types.C# ds6 ->
-                           case ds6 of ds7 {
-                             DEFAULT -> state
-                             'a'#
-                             -> case ds2 of wild3 {
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
-                                  -> case state of wild4 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
-                                     case ds10 of wild5 {
-                                       DEFAULT
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Left
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 }
-                                       GameState.Right -> wild4
-                                       GameState.Left -> wild4 } }
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up -> state }
-                             'd'#
-                             -> case ds2 of wild3 {
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
-                                  -> case state of wild4 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
-                                     case ds10 of wild5 {
-                                       DEFAULT
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Right
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 }
-                                       GameState.Right -> wild4
-                                       GameState.Left -> wild4 } }
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up -> state }
-                             'r'#
-                             -> case ds2 of wild3 {
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
-                                  -> GameState.initialGameState
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up -> state }
-                             's'#
-                             -> case ds2 of wild3 {
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
-                                  -> case state of wild4 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
-                                     case ds10 of wild5 {
-                                       DEFAULT -> wild4
-                                       GameState.Right
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Down
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 }
-                                       GameState.Left
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Down
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 } } }
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up -> state }
-                             'w'#
-                             -> case ds2 of wild3 {
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
-                                  -> case state of wild4 { GameState.Game ds8 ds9 ds10 ds11 ds12 ds13 ->
-                                     case ds10 of wild5 {
-                                       DEFAULT -> wild4
-                                       GameState.Right
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Up
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 }
-                                       GameState.Left
-                                       -> case ds13 of wild6 {
-                                            GHC.Types.False
-                                            -> GameState.Game
-                                                 ds8
-                                                 ds9
-                                                 GameState.Up
-                                                 ds11
-                                                 ds12
-                                                 GHC.Types.True
-                                            GHC.Types.True -> wild4 } } }
-                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up
-                                  -> state } } } } }) -}
+                        Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                        -> let {
+                             $j :: GameState.GameState <join 0>
+                             = let {
+                                 $j1 :: GameState.GameState <join 0>
+                                 = let {
+                                     $j2 :: GameState.GameState <join 0>
+                                     = case key of wild2 {
+                                         Graphics.Gloss.Internals.Interface.Backend.Types.Char a1
+                                         -> case a1 of wild3 { GHC.Types.C# x ->
+                                            case x of wild4 {
+                                              DEFAULT -> state
+                                              'd'#
+                                              -> case state of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                                                 case EventSystem.$wcanChangeTo
+                                                        GameState.Right
+                                                        ww3
+                                                        ww6 of wild5 {
+                                                   GHC.Types.False -> ww
+                                                   GHC.Types.True
+                                                   -> GameState.Game
+                                                        ww1
+                                                        ww2
+                                                        GameState.Right
+                                                        ww4
+                                                        ww5
+                                                        GHC.Types.True } }
+                                              'r'# -> GameState.initialGameState } }
+                                         Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey a1
+                                         -> state
+                                         Graphics.Gloss.Internals.Interface.Backend.Types.MouseButton a1
+                                         -> state }
+                                   } in
+                                   case key of wild2 {
+                                     Graphics.Gloss.Internals.Interface.Backend.Types.Char a1
+                                     -> case a1 of wild3 { GHC.Types.C# x ->
+                                        case x of wild4 {
+                                          DEFAULT -> $j2
+                                          'a'#
+                                          -> case state of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                                             case EventSystem.$wcanChangeTo
+                                                    GameState.Left
+                                                    ww3
+                                                    ww6 of wild5 {
+                                               GHC.Types.False -> ww
+                                               GHC.Types.True
+                                               -> GameState.Game
+                                                    ww1
+                                                    ww2
+                                                    GameState.Left
+                                                    ww4
+                                                    ww5
+                                                    GHC.Types.True } } } }
+                                     Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey a1
+                                     -> $j2
+                                     Graphics.Gloss.Internals.Interface.Backend.Types.MouseButton a1
+                                     -> $j2 }
+                               } in
+                               case key of wild2 {
+                                 Graphics.Gloss.Internals.Interface.Backend.Types.Char a1
+                                 -> case a1 of wild3 { GHC.Types.C# x ->
+                                    case x of wild4 {
+                                      DEFAULT -> $j1
+                                      's'#
+                                      -> case state of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                                         case EventSystem.$wcanChangeTo
+                                                GameState.Down
+                                                ww3
+                                                ww6 of wild5 {
+                                           GHC.Types.False -> ww
+                                           GHC.Types.True
+                                           -> GameState.Game
+                                                ww1
+                                                ww2
+                                                GameState.Down
+                                                ww4
+                                                ww5
+                                                GHC.Types.True } } } }
+                                 Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey a1
+                                 -> $j1
+                                 Graphics.Gloss.Internals.Interface.Backend.Types.MouseButton a1
+                                 -> $j1 }
+                           } in
+                           case key of wild2 {
+                             Graphics.Gloss.Internals.Interface.Backend.Types.Char a1
+                             -> case a1 of wild3 { GHC.Types.C# x ->
+                                case x of wild4 {
+                                  DEFAULT -> $j
+                                  'w'#
+                                  -> case state of ww { GameState.Game ww1 ww2 ww3 ww4 ww5 ww6 ->
+                                     case EventSystem.$wcanChangeTo GameState.Up ww3 ww6 of wild5 {
+                                       GHC.Types.False -> ww
+                                       GHC.Types.True
+                                       -> GameState.Game
+                                            ww1
+                                            ww2
+                                            GameState.Up
+                                            ww4
+                                            ww5
+                                            GHC.Types.True } } } }
+                             Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey a1
+                             -> $j
+                             Graphics.Gloss.Internals.Interface.Backend.Types.MouseButton a1
+                             -> $j }
+                        Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                        -> state } }) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

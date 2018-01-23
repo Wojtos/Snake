@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 15:35:26.462355 UTC
+2018-01-23 20:31:39.216846 UTC
 
 interface main:GameSettings 8022
-  interface hash: a287da8fc0d1c13489e0af9442399f99
-  ABI hash: 1a582e79e4b2c7bf52d188043ef7f7ba
+  interface hash: ba5d0db2a545166b4be3e7053cfcecef
+  ABI hash: 61d2a1e958f0b59a2cf36e3ede7af58a
   export-list hash: 044aa57492f2bc97370b52b50dbe2e24
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -76,22 +76,19 @@ b655def1669d2c19970608c3d09db38f
 401c942290a3c362976c53238e7fedcf
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-f37904eb9512de218984f1b8cf49eb29
+f4bf5b25af02fd475f8200b9a8d147db
   appleColor :: Graphics.Gloss.Internals.Data.Color.Color
-  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
-                        1.2#
-                        0.2#
-                        0.2#
-                        1.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
-                 Graphics.Gloss.Internals.Data.Color.RGBA ww6 ww7 ww8 ww9 }) -}
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Graphics.Gloss.Data.Color.red -}
 1c653a50025239264d3a3b3bf57128e3
   bgColor :: Graphics.Gloss.Internals.Data.Color.Color
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Graphics.Gloss.Data.Color.black -}
-2b90475ec1ef9475d31b9a1ad8acaea9
-  fps :: GHC.Types.Float
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 16.0#) -}
+caa4fbad3dccbcf080ad5fe0bb6f6dd2
+  fps :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 24#) -}
 0f22b0192a15fe655e9fd8a1db412f01
   gridColor :: Graphics.Gloss.Internals.Data.Color.Color
   {- Strictness: m,
@@ -100,12 +97,12 @@ f37904eb9512de218984f1b8cf49eb29
 303c8dbac0757e0047281654107b75b5
   rewardForEatingApple :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
-226003c757492ad6a0b43becfdf5b605
+a8d802b621aed8ed3c285b99f12cd26a
   sizeOfBoard :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32#) -}
-dfddec00eac64aa71bc12f6f1a2b0674
+  {- Strictness: m, Unfolding: (GameSettings.fps) -}
+c6722971f47f50397d88929e3cb0ecbd
   sizeOfScreen :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 512#) -}
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 384#) -}
 73dfbe4eb744b0fcbc9df0736581bcef
   sizeOfTile :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 16#) -}

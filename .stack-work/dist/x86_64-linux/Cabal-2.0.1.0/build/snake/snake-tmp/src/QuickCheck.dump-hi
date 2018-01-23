@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2018-01-23 14:38:09.187562 UTC
+2018-01-23 20:31:39.725057 UTC
 
 interface main:QuickCheck 8022
-  interface hash: f5f90833c8b5f9461f14ecaefecf8e94
-  ABI hash: 2c12cd7fbfa478b9b31f65dee2fe7481
+  interface hash: db40807c6aec09d4eb9a483cd6f8ec5f
+  ABI hash: 7f6a5e04596d0c7b34cf7d33a34f5be0
   export-list hash: 4ef1cca50cc1d7a8e87005271aba8958
   orphan hash: 06374b2c7d3aa29bb2981b91b9817d40
   flag hash: 1c6f65d52f53d3e6bedf9b8d55a3afa1
@@ -63,16 +63,16 @@ import  -/  base-4.10.1.0:Data.Tuple 8fa1305aa5032ea35e2a54fa5f1e78f9
 import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
 import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
 import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
-import  -/  GameSettings 1a582e79e4b2c7bf52d188043ef7f7ba
+import  -/  GameSettings 61d2a1e958f0b59a2cf36e3ede7af58a
   exports: 044aa57492f2bc97370b52b50dbe2e24
-  sizeOfBoard 226003c757492ad6a0b43becfdf5b605
+  sizeOfBoard a8d802b621aed8ed3c285b99f12cd26a
 import  -/  GameState 8acd50b608ce6b3d98f8794a54aa4079
   exports: c8cecce746904f3520e2c67cee428f1f
   Position 9b66e2b9ae1f48a2fc148b75d149bea2
-import  -/  UpdateGame abd58c087296ac45616f8ed18d4cb866
+import  -/  UpdateGame 7293d57cf824e2462c69fb452e6b3b98
   exports: ee87f42c4e9a95da6e7af1eff1fca0ce
-  ateApple e0821edf66093f2b2bf01cd41e3f5c4d
-  hasCollisionOccured 10d20ec220b494acc15315dd768d2fcb
+  ateApple 9eb923292b23b34033894c63893dccc4
+  hasCollisionOccured 0dfdeccb0731e5a75bb5e6e548bb4820
 7f97200d4c7fe24a7bdb7ceaeef019c2
   $s$fEq(,) :: GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
@@ -108,7 +108,7 @@ bddc0523c789a796b570d4afd5f05d88
 0f060c28d2dc8c5c5a8af98da2c705f8
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-62b2a7423c8887e7d19bec134dbfe9c1
+9fe4d4a13f235d176c7a41e917ab7d53
   propCollision :: [GameState.Position] -> GHC.Types.Bool
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ (ds :: [GameState.Position]) ->
@@ -128,27 +128,27 @@ bddc0523c789a796b570d4afd5f05d88
                                 case x of wild4 { GHC.Types.I# x1 ->
                                 case GHC.Prim.tagToEnum#
                                        @ GHC.Types.Bool
-                                       (GHC.Prim.<# x1 16#) of wild5 {
+                                       (GHC.Prim.<# x1 12#) of wild5 {
                                   GHC.Types.False -> GHC.Types.True
                                   GHC.Types.True
                                   -> case GHC.Prim.tagToEnum#
                                             @ GHC.Types.Bool
-                                            (GHC.Prim.># x1 -16#) of wild6 {
+                                            (GHC.Prim.># x1 -12#) of wild6 {
                                        GHC.Types.False -> GHC.Types.True
                                        GHC.Types.True
                                        -> case ds1 of wild7 { GHC.Types.I# x2 ->
                                           case GHC.Prim.tagToEnum#
                                                  @ GHC.Types.Bool
-                                                 (GHC.Prim.<# x2 16#) of wild8 {
+                                                 (GHC.Prim.<# x2 12#) of wild8 {
                                             GHC.Types.False -> GHC.Types.True
                                             GHC.Types.True
                                             -> case GHC.Prim.tagToEnum#
                                                       @ GHC.Types.Bool
-                                                      (GHC.Prim.># x2 -16#) of wild9 {
+                                                      (GHC.Prim.># x2 -12#) of wild9 {
                                                  GHC.Types.False -> GHC.Types.True
                                                  GHC.Types.True -> GHC.Types.False } } } } } } }
                              GHC.Types.True -> GHC.Types.True } } }) -}
-b1c02e2e6a1411f6bbd77185571451ab
+8e143648d5d170bed5b9e5e63b1609e5
   propPlaceOfApple :: [GameState.Position] -> GHC.Types.Bool
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: (\ (ds :: [GameState.Position]) ->
@@ -159,24 +159,24 @@ b1c02e2e6a1411f6bbd77185571451ab
                       case x of wild2 { GHC.Types.I# x1 ->
                       case GHC.Prim.tagToEnum#
                              @ GHC.Types.Bool
-                             (GHC.Prim.<# x1 16#) of wild3 {
+                             (GHC.Prim.<# x1 12#) of wild3 {
                         GHC.Types.False -> GHC.Types.False
                         GHC.Types.True
                         -> case GHC.Prim.tagToEnum#
                                   @ GHC.Types.Bool
-                                  (GHC.Prim.># x1 -16#) of wild4 {
+                                  (GHC.Prim.># x1 -12#) of wild4 {
                              GHC.Types.False -> GHC.Types.False
                              GHC.Types.True
                              -> case ds1 of wild5 { GHC.Types.I# x2 ->
                                 case GHC.Prim.tagToEnum#
                                        @ GHC.Types.Bool
-                                       (GHC.Prim.<# x2 16#) of wild6 {
+                                       (GHC.Prim.<# x2 12#) of wild6 {
                                   GHC.Types.False -> GHC.Types.False
                                   GHC.Types.True
                                   -> GHC.Prim.tagToEnum#
                                        @ GHC.Types.Bool
-                                       (GHC.Prim.># x2 -16#) } } } } } } }) -}
-94c226e7855667925e9974b121efea9d
+                                       (GHC.Prim.># x2 -12#) } } } } } } }) -}
+0d0fac24ed719d1bec0e4999cb6d4539
   withOutCollision ::
     [(GHC.Types.Int, GHC.Types.Int)] -> GHC.Types.Bool
   {- Arity: 1, Strictness: <S,1*U>,
@@ -194,23 +194,23 @@ b1c02e2e6a1411f6bbd77185571451ab
                            case x of wild3 { GHC.Types.I# x1 ->
                            case GHC.Prim.tagToEnum#
                                   @ GHC.Types.Bool
-                                  (GHC.Prim.<# x1 16#) of wild4 {
+                                  (GHC.Prim.<# x1 12#) of wild4 {
                              GHC.Types.False -> GHC.Types.False
                              GHC.Types.True
                              -> case GHC.Prim.tagToEnum#
                                        @ GHC.Types.Bool
-                                       (GHC.Prim.># x1 -16#) of wild5 {
+                                       (GHC.Prim.># x1 -12#) of wild5 {
                                   GHC.Types.False -> GHC.Types.False
                                   GHC.Types.True
                                   -> case ds1 of wild6 { GHC.Types.I# x2 ->
                                      case GHC.Prim.tagToEnum#
                                             @ GHC.Types.Bool
-                                            (GHC.Prim.<# x2 16#) of wild7 {
+                                            (GHC.Prim.<# x2 12#) of wild7 {
                                        GHC.Types.False -> GHC.Types.False
                                        GHC.Types.True
                                        -> GHC.Prim.tagToEnum#
                                             @ GHC.Types.Bool
-                                            (GHC.Prim.># x2 -16#) } } } } } }
+                                            (GHC.Prim.># x2 -12#) } } } } } }
                         GHC.Types.True -> GHC.Types.False } }) -}
 b9e0824af2541516fef90aa11df28ad8
   withOutCollision1 :: GHC.Types.Bool
